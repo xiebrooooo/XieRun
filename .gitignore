@@ -1,0 +1,108 @@
+/target
+Cargo.lock.bak
+nekosportsworldtool.log*
+*.log.old
+
+# 运行时数据（含会话/凭据，禁止入库，任意层级都忽略）
+session.json
+session_registry.json
+config.json
+identity.json
+points_cache.json
+accounts.json
+account_bindings.json
+batch_state.json
+fence_cache.json
+history-*.json
+# 程序跑一次就会在 exe 同目录生成的路网导出（含本人跑步轨迹，禁止入库）
+history-network.json
+history-network.osm
+/semester_result.json
+/rank_result.json
+/.idea/
+docs/_preview.png
+/fixtures
+/ai_sports.json
+/obs_*.json
+/rec_all.tmp
+/msg.txt
+/.superpowers/
+/android/build/
+/android/.signing/
+*.apk
+*.aab
+*.keystore
+*.jks
+/target-ui/
+/.android-test/
+/.worktrees/
+
+# 打包输出（含 exe 与运行数据，禁止入库）
+/dist
+# 按学校/地区打包的成品（不再入库；自助生成见 提示词.md）
+/releases/
+# 本地工具目录
+/.mimosa/
+/.zcode/
+
+# 自动更新替换残留
+*.exe.old
+*.exe.new
+
+# ===== 协作仓库补充规则 =====
+# 环境与本地配置
+.env
+*.secret
+*.log
+.vscode/
+.idea/
+# Python 缓存（tools/track-check 等）
+__pycache__/
+*.pyc
+
+# 构建产物
+target/
+*.exe
+
+# 安全：私钥与代理凭据严禁入库（一旦推到 GitHub 视为已泄露）
+*.key
+/_keybackup/
+proxies.txt
+
+# ===== 本地参考资料 / 导出包（禁止入库）=====
+*.zip
+/_dsh-src/
+/_pytmp/
+# 外部协议参考仓库的浅克隆与按 tree 导出的参考副本（分析用，不入库）
+/.cache/
+# 第三方协议参考库（Inverx，无 LICENSE，仅本机对照，见 imports/来源.md）
+/imports/
+/NekoSportsWorldTool-win-x64/
+/NekoSportsWorldTool-win-x64.zip
+/NekoSportsWorldTool-个人免卡版-*/
+/NekoSportsWorldTool-源码-*/
+/湖南石油化工职业技术学院-源码/
+/运动世界py版/
+
+# 本地运行产生的记录数据
+/history_tracks/
+/records_raw.json
+/record_info_*.json
+
+# ===== 单校版子项目（各学校目录）=====
+# 任意层级的编译产物与客户包目录都不入库（dist 里有 exe/apk 和激活后的 runtime 文件）
+dist/
+android/build/
+# 激活/授权与路网覆盖属于本机运行状态，禁止入库
+license.json
+network_override.osm
+
+# 构建产物与本人运行数据（XieRun）
+*.exe
+route.osm
+route.outline
+checkpoints.json
+gui.log
+gui.old.log
+panic.log
+semester_result.json

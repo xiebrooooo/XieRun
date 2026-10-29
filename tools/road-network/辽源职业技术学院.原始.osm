@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="web-network-editor">
+  <!-- 网页路网编辑器修改：节点 229 / 路段 263 -->
+  <node id="12000000000000" lat="42.8465251" lon="125.1227928"/>
+  <node id="12000000000001" lat="42.8466413" lon="125.1228488"/>
+  <node id="12000000000002" lat="42.8468091" lon="125.1228985"/>
+  <node id="12000000000003" lat="42.8469801" lon="125.1229676"/>
+  <node id="12000000000004" lat="42.8471578" lon="125.1230315"/>
+  <node id="12000000000005" lat="42.8472740" lon="125.1232278"/>
+  <node id="12000000000006" lat="42.8472679" lon="125.1234664"/>
+  <node id="12000000000007" lat="42.8472348" lon="125.1237053"/>
+  <node id="12000000000008" lat="42.8471945" lon="125.1239426"/>
+  <node id="12000000000009" lat="42.8471499" lon="125.1241795"/>
+  <node id="12000000000010" lat="42.8471303" lon="125.1244203"/>
+  <node id="12000000000011" lat="42.8471940" lon="125.1246346"/>
+  <node id="12000000000012" lat="42.8473492" lon="125.1247459"/>
+  <node id="12000000000013" lat="42.8475200" lon="125.1248201"/>
+  <node id="12000000000014" lat="42.8476975" lon="125.1249052"/>
+  <node id="12000000000015" lat="42.8478214" lon="125.1249565"/>
+  <node id="12000000000016" lat="42.8479552" lon="125.1250318"/>
+  <node id="12000000000017" lat="42.8481140" lon="125.1250986"/>
+  <node id="12000000000018" lat="42.8482037" lon="125.1253231"/>
+  <node id="12000000000019" lat="42.8481863" lon="125.1255620"/>
+  <node id="12000000000020" lat="42.8481425" lon="125.1257993"/>
+  <node id="12000000000021" lat="42.8481142" lon="125.1260405"/>
+  <node id="12000000000022" lat="42.8481175" lon="125.1262833"/>
+  <node id="12000000000023" lat="42.8481465" lon="125.1265054"/>
+  <node id="12000000000024" lat="42.8481050" lon="125.1267488"/>
+  <node id="12000000000025" lat="42.8480645" lon="125.1269865"/>
+  <node id="12000000000026" lat="42.8480196" lon="125.1272226"/>
+  <node id="12000000000027" lat="42.8479641" lon="125.1274546"/>
+  <node id="12000000000028" lat="42.8479185" lon="125.1276896"/>
+  <node id="12000000000029" lat="42.8478897" lon="125.1278718"/>
+  <node id="12000000000030" lat="42.8482901" lon="125.1264515"/>
+  <node id="12000000000031" lat="42.8484786" lon="125.1264748"/>
+  <node id="12000000000032" lat="42.8486384" lon="125.1264184"/>
+  <node id="12000000000033" lat="42.8487538" lon="125.1262414"/>
+  <node id="12000000000034" lat="42.8488244" lon="125.1260312"/>
+  <node id="12000000000035" lat="42.8489090" lon="125.1258168"/>
+  <node id="12000000000036" lat="42.8489850" lon="125.1255676"/>
+  <node id="12000000000037" lat="42.8490588" lon="125.1253687"/>
+  <node id="12000000000038" lat="42.8492539" lon="125.1253996"/>
+  <node id="12000000000039" lat="42.8494009" lon="125.1255163"/>
+  <node id="12000000000040" lat="42.8495625" lon="125.1256203"/>
+  <node id="12000000000041" lat="42.8497302" lon="125.1257054"/>
+  <node id="12000000000042" lat="42.8498998" lon="125.1257862"/>
+  <node id="12000000000043" lat="42.8500702" lon="125.1258637"/>
+  <node id="12000000000044" lat="42.8502429" lon="125.1259302"/>
+  <node id="12000000000045" lat="42.8504146" lon="125.1260017"/>
+  <node id="12000000000046" lat="42.8505798" lon="125.1261074"/>
+  <node id="12000000000047" lat="42.8507226" lon="125.1262635"/>
+  <node id="12000000000048" lat="42.8508512" lon="125.1264285"/>
+  <node id="12000000000049" lat="42.8509736" lon="125.1265865"/>
+  <node id="12000000000050" lat="42.8491254" lon="125.1252635"/>
+  <node id="12000000000051" lat="42.8490417" lon="125.1250957"/>
+  <node id="12000000000052" lat="42.8488558" lon="125.1250315"/>
+  <node id="12000000000053" lat="42.8486836" lon="125.1249442"/>
+  <node id="12000000000054" lat="42.8485279" lon="125.1248741"/>
+  <node id="12000000000055" lat="42.8483793" lon="125.1246902"/>
+  <node id="12000000000056" lat="42.8482631" lon="125.1245104"/>
+  <node id="12000000000057" lat="42.8482024" lon="125.1242827"/>
+  <node id="12000000000058" lat="42.8481171" lon="125.1241918"/>
+  <node id="12000000000059" lat="42.8479892" lon="125.1244166"/>
+  <node id="12000000000060" lat="42.8480492" lon="125.1246221"/>
+  <node id="12000000000061" lat="42.8481972" lon="125.1247393"/>
+  <node id="12000000000062" lat="42.8483421" lon="125.1248828"/>
+  <node id="12000000000063" lat="42.8491493" lon="125.1248974"/>
+  <node id="12000000000064" lat="42.8492296" lon="125.1246722"/>
+  <node id="12000000000065" lat="42.8492908" lon="125.1244489"/>
+  <node id="12000000000066" lat="42.8493353" lon="125.1242471"/>
+  <node id="12000000000067" lat="42.8481969" lon="125.1240061"/>
+  <node id="12000000000068" lat="42.8482458" lon="125.1237717"/>
+  <node id="12000000000069" lat="42.8482745" lon="125.1235320"/>
+  <node id="12000000000070" lat="42.8482727" lon="125.1232912"/>
+  <node id="12000000000071" lat="42.8481788" lon="125.1230950"/>
+  <node id="12000000000072" lat="42.8480231" lon="125.1229813"/>
+  <node id="12000000000073" lat="42.8478512" lon="125.1229128"/>
+  <node id="12000000000074" lat="42.8476740" lon="125.1228819"/>
+  <node id="12000000000075" lat="42.8474975" lon="125.1229096"/>
+  <node id="12000000000076" lat="42.8473296" lon="125.1229919"/>
+  <node id="12000000000077" lat="42.8484040" lon="125.1249539"/>
+  <node id="12000000000078" lat="42.8482499" lon="125.1250356"/>
+  <node id="12000000000079" lat="42.8493698" lon="125.1240251"/>
+  <node id="12000000000080" lat="42.8494211" lon="125.1237935"/>
+  <node id="12000000000081" lat="42.8494761" lon="125.1236481"/>
+  <node id="12000000000082" lat="42.8490675" lon="125.1257462"/>
+  <node id="12000000000083" lat="42.8489716" lon="125.1260261"/>
+  <node id="12000000000084" lat="42.8489128" lon="125.1262240"/>
+  <node id="12000000000085" lat="42.8488516" lon="125.1263556"/>
+  <node id="12000000000086" lat="42.8490056" lon="125.1252965"/>
+  <node id="12000000000087" lat="42.8463813" lon="125.1227598"/>
+  <node id="12000000000088" lat="42.8462224" lon="125.1226527"/>
+  <node id="12000000000089" lat="42.8460754" lon="125.1225163"/>
+  <node id="12000000000090" lat="42.8459482" lon="125.1223448"/>
+  <node id="12000000000091" lat="42.8458108" lon="125.1221894"/>
+  <node id="12000000000092" lat="42.8456495" lon="125.1220836"/>
+  <node id="12000000000093" lat="42.8454787" lon="125.1220078"/>
+  <node id="12000000000094" lat="42.8453074" lon="125.1219344"/>
+  <node id="12000000000095" lat="42.8451341" lon="125.1218696"/>
+  <node id="12000000000096" lat="42.8449626" lon="125.1217969"/>
+  <node id="12000000000097" lat="42.8447899" lon="125.1217287"/>
+  <node id="12000000000098" lat="42.8446308" lon="125.1216265"/>
+  <node id="12000000000099" lat="42.8444803" lon="125.1215257"/>
+  <node id="12000000000100" lat="42.8443021" lon="125.1215005"/>
+  <node id="12000000000101" lat="42.8441750" lon="125.1215381"/>
+  <node id="12000001000000" lat="42.8440805" lon="125.1214859"/>
+  <node id="12000001000001" lat="42.8440333" lon="125.1215181"/>
+  <node id="12000001000002" lat="42.8439823" lon="125.1216309"/>
+  <node id="12000001000003" lat="42.8439588" lon="125.1216953"/>
+  <node id="12000001000004" lat="42.8439118" lon="125.1219262"/>
+  <node id="12000001000005" lat="42.8438728" lon="125.1221732"/>
+  <node id="12000001000006" lat="42.8438414" lon="125.1222860"/>
+  <node id="12000001000007" lat="42.8438297" lon="125.1224202"/>
+  <node id="12000001000008" lat="42.8438180" lon="125.1224954"/>
+  <node id="12000001000009" lat="42.8438888" lon="125.1225007"/>
+  <node id="12000001000010" lat="42.8439557" lon="125.1225544"/>
+  <node id="12000001000011" lat="42.8439990" lon="125.1226457"/>
+  <node id="12000001000012" lat="42.8440660" lon="125.1227584"/>
+  <node id="12000001000013" lat="42.8440896" lon="125.1228282"/>
+  <node id="12000001000014" lat="42.8441605" lon="125.1229303"/>
+  <node id="12000001000015" lat="42.8442038" lon="125.1230162"/>
+  <node id="12000001000016" lat="42.8442550" lon="125.1230806"/>
+  <node id="12000001000017" lat="42.8442904" lon="125.1231343"/>
+  <node id="12000001000018" lat="42.8443652" lon="125.1231504"/>
+  <node id="12000001000019" lat="42.8444557" lon="125.1232470"/>
+  <node id="12000001000020" lat="42.8446798" lon="125.1233007"/>
+  <node id="12000001000021" lat="42.8448844" lon="125.1234134"/>
+  <node id="12000001000022" lat="42.8450299" lon="125.1234188"/>
+  <node id="12000001000023" lat="42.8452029" lon="125.1234456"/>
+  <node id="12000001000024" lat="42.8453367" lon="125.1236174"/>
+  <node id="12000001000025" lat="42.8454506" lon="125.1234939"/>
+  <node id="12000001000026" lat="42.8455331" lon="125.1233918"/>
+  <node id="12000001000027" lat="42.8456392" lon="125.1233059"/>
+  <node id="12000001000028" lat="42.8457098" lon="125.1231663"/>
+  <node id="12000001000029" lat="42.8457371" lon="125.1229515"/>
+  <node id="12000001000030" lat="42.8457410" lon="125.1228709"/>
+  <node id="12000001000031" lat="42.8456975" lon="125.1226723"/>
+  <node id="12000001000032" lat="42.8456385" lon="125.1225756"/>
+  <node id="12000001000033" lat="42.8455086" lon="125.1225005"/>
+  <node id="12000001000034" lat="42.8454025" lon="125.1224790"/>
+  <node id="12000001000035" lat="42.8452530" lon="125.1223985"/>
+  <node id="12000001000036" lat="42.8451468" lon="125.1223556"/>
+  <node id="12000001000037" lat="42.8449973" lon="125.1222858"/>
+  <node id="12000001000038" lat="42.8449265" lon="125.1222589"/>
+  <node id="12000001000039" lat="42.8447810" lon="125.1222214"/>
+  <node id="12000001000040" lat="42.8446788" lon="125.1221999"/>
+  <node id="12000001000041" lat="42.8446041" lon="125.1221999"/>
+  <node id="12000001000042" lat="42.8445530" lon="125.1222375"/>
+  <node id="12000001000043" lat="42.8444823" lon="125.1223073"/>
+  <node id="12000001000044" lat="42.8444312" lon="125.1223449"/>
+  <node id="12000001000045" lat="42.8443684" lon="125.1224309"/>
+  <node id="12000001000046" lat="42.8443488" lon="125.1225329"/>
+  <node id="12000001000047" lat="42.8443215" lon="125.1226993"/>
+  <node id="12000001000048" lat="42.8443334" lon="125.1228819"/>
+  <node id="12000001000049" lat="42.8444044" lon="125.1230537"/>
+  <node id="12000001000050" lat="42.8444988" lon="125.1231181"/>
+  <node id="12000001000051" lat="42.8446168" lon="125.1231450"/>
+  <node id="12000001000052" lat="42.8446876" lon="125.1232094"/>
+  <node id="12000001000053" lat="42.8447820" lon="125.1232040"/>
+  <node id="12000001000054" lat="42.8448724" lon="125.1232201"/>
+  <node id="12000001000055" lat="42.8449472" lon="125.1232738"/>
+  <node id="12000001000056" lat="42.8450612" lon="125.1233167"/>
+  <node id="12000001000057" lat="42.8451360" lon="125.1233597"/>
+  <node id="12000001000058" lat="42.8452500" lon="125.1233973"/>
+  <node id="12000001000059" lat="42.8453759" lon="125.1234080"/>
+  <node id="12000001000060" lat="42.8454702" lon="125.1234294"/>
+  <node id="12000001000061" lat="42.8455645" lon="125.1233220"/>
+  <node id="12000001000062" lat="42.8456077" lon="125.1232576"/>
+  <node id="12000001000063" lat="42.8456390" lon="125.1231180"/>
+  <node id="12000001000064" lat="42.8456703" lon="125.1229676"/>
+  <node id="12000001000065" lat="42.8456937" lon="125.1228173"/>
+  <node id="12000001000066" lat="42.8456307" lon="125.1226454"/>
+  <node id="12000001000067" lat="42.8455441" lon="125.1226025"/>
+  <node id="12000001000068" lat="42.8454812" lon="125.1225596"/>
+  <node id="12000001000069" lat="42.8453436" lon="125.1225327"/>
+  <node id="12000001000070" lat="42.8452609" lon="125.1224951"/>
+  <node id="12000001000071" lat="42.8451862" lon="125.1224952"/>
+  <node id="12000001000072" lat="42.8450918" lon="125.1224254"/>
+  <node id="12000001000073" lat="42.8450446" lon="125.1224200"/>
+  <node id="12000001000074" lat="42.8448873" lon="125.1223449"/>
+  <node id="12000001000075" lat="42.8448008" lon="125.1223127"/>
+  <node id="12000001000076" lat="42.8447339" lon="125.1222966"/>
+  <node id="12000001000077" lat="42.8446710" lon="125.1222805"/>
+  <node id="12000001000078" lat="42.8446041" lon="125.1222644"/>
+  <node id="12000001000079" lat="42.8441641" lon="125.1225651"/>
+  <node id="12000001000080" lat="42.8440895" lon="125.1226886"/>
+  <node id="12000001000081" lat="42.8437984" lon="125.1225867"/>
+  <node id="12000001000082" lat="42.8508878" lon="125.1271502"/>
+  <node id="12000001000083" lat="42.8508018" lon="125.1275584"/>
+  <node id="12000001000084" lat="42.8507392" lon="125.1278699"/>
+  <node id="12000001000085" lat="42.8506765" lon="125.1280203"/>
+  <node id="12000001000086" lat="42.8506216" lon="125.1281600"/>
+  <node id="12000001000087" lat="42.8505431" lon="125.1282996"/>
+  <node id="12000001000088" lat="42.8504175" lon="125.1284608"/>
+  <node id="12000001000089" lat="42.8502998" lon="125.1286112"/>
+  <node id="12000001000090" lat="42.8501583" lon="125.1286327"/>
+  <node id="12000001000091" lat="42.8499460" lon="125.1286220"/>
+  <node id="12000001000092" lat="42.8495369" lon="125.1284931"/>
+  <node id="12000001000093" lat="42.8491673" lon="125.1284072"/>
+  <node id="12000001000094" lat="42.8488211" lon="125.1282462"/>
+  <node id="12000001000095" lat="42.8482469" lon="125.1279992"/>
+  <node id="12000001000096" lat="42.8512670" lon="125.1251362"/>
+  <node id="12000001000097" lat="42.8512665" lon="125.1246314"/>
+  <node id="12000001000098" lat="42.8510538" lon="125.1242126"/>
+  <node id="12000001000099" lat="42.8507864" lon="125.1241160"/>
+  <node id="12000001000100" lat="42.8503302" lon="125.1239764"/>
+  <node id="12000001000101" lat="42.8501021" lon="125.1238798"/>
+  <node id="12000001000102" lat="42.8498582" lon="125.1237402"/>
+  <node id="12000001000103" lat="42.8472342" lon="125.1258994"/>
+  <node id="12000001000104" lat="42.8477456" lon="125.1261249"/>
+  <node id="12000001000105" lat="42.8470533" lon="125.1258565"/>
+  <node id="12000001000106" lat="42.8469586" lon="125.1255128"/>
+  <node id="12000001000107" lat="42.8469192" lon="125.1253839"/>
+  <node id="12000001000108" lat="42.8468483" lon="125.1252980"/>
+  <node id="12000001000109" lat="42.8467146" lon="125.1252551"/>
+  <node id="12000001000110" lat="42.8465967" lon="125.1252766"/>
+  <node id="12000001000111" lat="42.8464315" lon="125.1252551"/>
+  <node id="12000001000112" lat="42.8462034" lon="125.1252122"/>
+  <node id="12000001000113" lat="42.8460461" lon="125.1251370"/>
+  <node id="12000001000114" lat="42.8458887" lon="125.1250189"/>
+  <node id="12000001000115" lat="42.8457628" lon="125.1249652"/>
+  <node id="12000001000116" lat="42.8456055" lon="125.1248793"/>
+  <node id="12000001000117" lat="42.8454404" lon="125.1248793"/>
+  <node id="12000001000118" lat="42.8452755" lon="125.1250942"/>
+  <node id="12000001000119" lat="42.8450947" lon="125.1251479"/>
+  <node id="12000001000120" lat="42.8446305" lon="125.1249654"/>
+  <node id="12000001000121" lat="42.8441192" lon="125.1248151"/>
+  <node id="12000001000122" lat="42.8435529" lon="125.1246219"/>
+  <node id="12000001000123" lat="42.8432304" lon="125.1245252"/>
+  <node id="12000001000124" lat="42.8430730" lon="125.1244179"/>
+  <node id="12000001000125" lat="42.8431043" lon="125.1242353"/>
+  <node id="12000001000126" lat="42.8434576" lon="125.1236875"/>
+  <way id="12000002000000">
+    <nd ref="12000000000000"/>
+    <nd ref="12000000000001"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 1"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000001">
+    <nd ref="12000000000000"/>
+    <nd ref="12000000000087"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 2"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000002">
+    <nd ref="12000000000001"/>
+    <nd ref="12000000000002"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 3"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000003">
+    <nd ref="12000000000002"/>
+    <nd ref="12000000000003"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 4"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000004">
+    <nd ref="12000000000003"/>
+    <nd ref="12000000000004"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 5"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000005">
+    <nd ref="12000000000004"/>
+    <nd ref="12000000000005"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 6"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000006">
+    <nd ref="12000000000004"/>
+    <nd ref="12000000000076"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 7"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000007">
+    <nd ref="12000000000005"/>
+    <nd ref="12000000000006"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 8"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000008">
+    <nd ref="12000000000006"/>
+    <nd ref="12000000000007"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 9"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000009">
+    <nd ref="12000000000007"/>
+    <nd ref="12000000000008"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 10"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000010">
+    <nd ref="12000000000008"/>
+    <nd ref="12000000000009"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 11"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000011">
+    <nd ref="12000000000009"/>
+    <nd ref="12000000000010"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 12"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000012">
+    <nd ref="12000000000010"/>
+    <nd ref="12000000000011"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 13"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000013">
+    <nd ref="12000000000011"/>
+    <nd ref="12000000000012"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 14"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000014">
+    <nd ref="12000000000012"/>
+    <nd ref="12000000000013"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 15"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000015">
+    <nd ref="12000000000013"/>
+    <nd ref="12000000000014"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 16"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000016">
+    <nd ref="12000000000014"/>
+    <nd ref="12000000000015"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 17"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000017">
+    <nd ref="12000000000015"/>
+    <nd ref="12000000000016"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 18"/>
+    <tag k="neko:support" v="8"/>
+  </way>
+  <way id="12000002000018">
+    <nd ref="12000000000016"/>
+    <nd ref="12000000000017"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 19"/>
+    <tag k="neko:support" v="8"/>
+  </way>
+  <way id="12000002000019">
+    <nd ref="12000000000017"/>
+    <nd ref="12000000000018"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 20"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000020">
+    <nd ref="12000000000017"/>
+    <nd ref="12000000000078"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 21"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000021">
+    <nd ref="12000000000018"/>
+    <nd ref="12000000000019"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 22"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000022">
+    <nd ref="12000000000018"/>
+    <nd ref="12000000000078"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 23"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000023">
+    <nd ref="12000000000019"/>
+    <nd ref="12000000000020"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 24"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000024">
+    <nd ref="12000000000020"/>
+    <nd ref="12000000000021"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 25"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000025">
+    <nd ref="12000000000021"/>
+    <nd ref="12000000000022"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 26"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000026">
+    <nd ref="12000000000022"/>
+    <nd ref="12000000000023"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 27"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000027">
+    <nd ref="12000000000022"/>
+    <nd ref="12000000000030"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 28"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000028">
+    <nd ref="12000000000023"/>
+    <nd ref="12000000000024"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 29"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000029">
+    <nd ref="12000000000023"/>
+    <nd ref="12000000000030"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 30"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000030">
+    <nd ref="12000000000024"/>
+    <nd ref="12000000000025"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 31"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000031">
+    <nd ref="12000000000025"/>
+    <nd ref="12000000000026"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 32"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000032">
+    <nd ref="12000000000026"/>
+    <nd ref="12000000000027"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 33"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000033">
+    <nd ref="12000000000027"/>
+    <nd ref="12000000000028"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 34"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000034">
+    <nd ref="12000000000028"/>
+    <nd ref="12000000000029"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 35"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000035">
+    <nd ref="12000000000030"/>
+    <nd ref="12000000000031"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 36"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000036">
+    <nd ref="12000000000031"/>
+    <nd ref="12000000000032"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 37"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000037">
+    <nd ref="12000000000032"/>
+    <nd ref="12000000000033"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 38"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000038">
+    <nd ref="12000000000033"/>
+    <nd ref="12000000000034"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 39"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000039">
+    <nd ref="12000000000034"/>
+    <nd ref="12000000000035"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 40"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000040">
+    <nd ref="12000000000035"/>
+    <nd ref="12000000000036"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 41"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000041">
+    <nd ref="12000000000035"/>
+    <nd ref="12000000000083"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 42"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000042">
+    <nd ref="12000000000036"/>
+    <nd ref="12000000000037"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 43"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000043">
+    <nd ref="12000000000036"/>
+    <nd ref="12000000000082"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 44"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000044">
+    <nd ref="12000000000036"/>
+    <nd ref="12000000000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 45"/>
+    <tag k="neko:support" v="5"/>
+  </way>
+  <way id="12000002000045">
+    <nd ref="12000000000037"/>
+    <nd ref="12000000000038"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 46"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000046">
+    <nd ref="12000000000037"/>
+    <nd ref="12000000000050"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 47"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000047">
+    <nd ref="12000000000037"/>
+    <nd ref="12000000000051"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 48"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000048">
+    <nd ref="12000000000037"/>
+    <nd ref="12000000000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 49"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000049">
+    <nd ref="12000000000038"/>
+    <nd ref="12000000000039"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 50"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000050">
+    <nd ref="12000000000038"/>
+    <nd ref="12000000000050"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 51"/>
+    <tag k="neko:support" v="7"/>
+  </way>
+  <way id="12000002000051">
+    <nd ref="12000000000039"/>
+    <nd ref="12000000000040"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 52"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000052">
+    <nd ref="12000000000040"/>
+    <nd ref="12000000000041"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 53"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000053">
+    <nd ref="12000000000041"/>
+    <nd ref="12000000000042"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 54"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000054">
+    <nd ref="12000000000042"/>
+    <nd ref="12000000000043"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 55"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000055">
+    <nd ref="12000000000043"/>
+    <nd ref="12000000000044"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 56"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000056">
+    <nd ref="12000000000044"/>
+    <nd ref="12000000000045"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 57"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000057">
+    <nd ref="12000000000045"/>
+    <nd ref="12000000000046"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 58"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000058">
+    <nd ref="12000000000046"/>
+    <nd ref="12000000000047"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 59"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000059">
+    <nd ref="12000000000047"/>
+    <nd ref="12000000000048"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 60"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000060">
+    <nd ref="12000000000048"/>
+    <nd ref="12000000000049"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 61"/>
+    <tag k="neko:support" v="8"/>
+  </way>
+  <way id="12000002000061">
+    <nd ref="12000000000050"/>
+    <nd ref="12000000000051"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 62"/>
+    <tag k="neko:support" v="7"/>
+  </way>
+  <way id="12000002000062">
+    <nd ref="12000000000050"/>
+    <nd ref="12000000000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 63"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000063">
+    <nd ref="12000000000051"/>
+    <nd ref="12000000000052"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 64"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000064">
+    <nd ref="12000000000051"/>
+    <nd ref="12000000000063"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 65"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000065">
+    <nd ref="12000000000051"/>
+    <nd ref="12000000000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 66"/>
+    <tag k="neko:support" v="4"/>
+  </way>
+  <way id="12000002000066">
+    <nd ref="12000000000052"/>
+    <nd ref="12000000000053"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 67"/>
+    <tag k="neko:support" v="7"/>
+  </way>
+  <way id="12000002000067">
+    <nd ref="12000000000052"/>
+    <nd ref="12000000000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 68"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000068">
+    <nd ref="12000000000053"/>
+    <nd ref="12000000000054"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 69"/>
+    <tag k="neko:support" v="7"/>
+  </way>
+  <way id="12000002000069">
+    <nd ref="12000000000054"/>
+    <nd ref="12000000000055"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 70"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000070">
+    <nd ref="12000000000054"/>
+    <nd ref="12000000000062"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 71"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000071">
+    <nd ref="12000000000054"/>
+    <nd ref="12000000000077"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 72"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000072">
+    <nd ref="12000000000055"/>
+    <nd ref="12000000000056"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 73"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000073">
+    <nd ref="12000000000056"/>
+    <nd ref="12000000000057"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 74"/>
+    <tag k="neko:support" v="3"/>
+  </way>
+  <way id="12000002000074">
+    <nd ref="12000000000057"/>
+    <nd ref="12000000000058"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 75"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000075">
+    <nd ref="12000000000057"/>
+    <nd ref="12000000000067"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 76"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000076">
+    <nd ref="12000000000058"/>
+    <nd ref="12000000000059"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 77"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000077">
+    <nd ref="12000000000058"/>
+    <nd ref="12000000000067"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 78"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000078">
+    <nd ref="12000000000059"/>
+    <nd ref="12000000000060"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 79"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000079">
+    <nd ref="12000000000060"/>
+    <nd ref="12000000000061"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 80"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000080">
+    <nd ref="12000000000061"/>
+    <nd ref="12000000000062"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 81"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000081">
+    <nd ref="12000000000062"/>
+    <nd ref="12000000000077"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 82"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000082">
+    <nd ref="12000000000062"/>
+    <nd ref="12000000000078"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 83"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000083">
+    <nd ref="12000000000063"/>
+    <nd ref="12000000000064"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 84"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000084">
+    <nd ref="12000000000064"/>
+    <nd ref="12000000000065"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 85"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000085">
+    <nd ref="12000000000065"/>
+    <nd ref="12000000000066"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 86"/>
+    <tag k="neko:support" v="10"/>
+  </way>
+  <way id="12000002000086">
+    <nd ref="12000000000066"/>
+    <nd ref="12000000000079"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 87"/>
+    <tag k="neko:support" v="8"/>
+  </way>
+  <way id="12000002000087">
+    <nd ref="12000000000067"/>
+    <nd ref="12000000000068"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 88"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000088">
+    <nd ref="12000000000068"/>
+    <nd ref="12000000000069"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 89"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000089">
+    <nd ref="12000000000069"/>
+    <nd ref="12000000000070"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 90"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000090">
+    <nd ref="12000000000070"/>
+    <nd ref="12000000000071"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 91"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000091">
+    <nd ref="12000000000071"/>
+    <nd ref="12000000000072"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 92"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000092">
+    <nd ref="12000000000072"/>
+    <nd ref="12000000000073"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 93"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000093">
+    <nd ref="12000000000073"/>
+    <nd ref="12000000000074"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 94"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000094">
+    <nd ref="12000000000074"/>
+    <nd ref="12000000000075"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 95"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000095">
+    <nd ref="12000000000075"/>
+    <nd ref="12000000000076"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 96"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000096">
+    <nd ref="12000000000077"/>
+    <nd ref="12000000000078"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 97"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000097">
+    <nd ref="12000000000079"/>
+    <nd ref="12000000000080"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 98"/>
+    <tag k="neko:support" v="8"/>
+  </way>
+  <way id="12000002000098">
+    <nd ref="12000000000080"/>
+    <nd ref="12000000000081"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 99"/>
+    <tag k="neko:support" v="6"/>
+  </way>
+  <way id="12000002000099">
+    <nd ref="12000000000082"/>
+    <nd ref="12000000000083"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 100"/>
+    <tag k="neko:support" v="1"/>
+  </way>
+  <way id="12000002000100">
+    <nd ref="12000000000083"/>
+    <nd ref="12000000000084"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 101"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000101">
+    <nd ref="12000000000084"/>
+    <nd ref="12000000000085"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 102"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000102">
+    <nd ref="12000000000087"/>
+    <nd ref="12000000000088"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 103"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000103">
+    <nd ref="12000000000088"/>
+    <nd ref="12000000000089"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 104"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000104">
+    <nd ref="12000000000089"/>
+    <nd ref="12000000000090"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 105"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000105">
+    <nd ref="12000000000090"/>
+    <nd ref="12000000000091"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 106"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000106">
+    <nd ref="12000000000091"/>
+    <nd ref="12000000000092"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 107"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000107">
+    <nd ref="12000000000092"/>
+    <nd ref="12000000000093"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 108"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000108">
+    <nd ref="12000000000093"/>
+    <nd ref="12000000000094"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 109"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000109">
+    <nd ref="12000000000094"/>
+    <nd ref="12000000000095"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 110"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000110">
+    <nd ref="12000000000095"/>
+    <nd ref="12000000000096"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 111"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000111">
+    <nd ref="12000000000096"/>
+    <nd ref="12000000000097"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 112"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000112">
+    <nd ref="12000000000097"/>
+    <nd ref="12000000000098"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 113"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000113">
+    <nd ref="12000000000098"/>
+    <nd ref="12000000000099"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 114"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000114">
+    <nd ref="12000000000099"/>
+    <nd ref="12000000000100"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 115"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000002000115">
+    <nd ref="12000000000100"/>
+    <nd ref="12000000000101"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="历史轨迹路网 116"/>
+    <tag k="neko:support" v="2"/>
+  </way>
+  <way id="12000003000000">
+    <nd ref="12000000000101"/>
+    <nd ref="12000001000000"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000001">
+    <nd ref="12000001000000"/>
+    <nd ref="12000001000001"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000002">
+    <nd ref="12000001000002"/>
+    <nd ref="12000001000003"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000003">
+    <nd ref="12000001000003"/>
+    <nd ref="12000001000001"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000004">
+    <nd ref="12000001000001"/>
+    <nd ref="12000001000003"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000005">
+    <nd ref="12000001000003"/>
+    <nd ref="12000001000004"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000006">
+    <nd ref="12000001000004"/>
+    <nd ref="12000001000005"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000007">
+    <nd ref="12000001000005"/>
+    <nd ref="12000001000006"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000008">
+    <nd ref="12000001000006"/>
+    <nd ref="12000001000007"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000009">
+    <nd ref="12000001000007"/>
+    <nd ref="12000001000008"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000010">
+    <nd ref="12000001000008"/>
+    <nd ref="12000001000009"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000011">
+    <nd ref="12000001000009"/>
+    <nd ref="12000001000010"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000012">
+    <nd ref="12000001000010"/>
+    <nd ref="12000001000011"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000013">
+    <nd ref="12000001000011"/>
+    <nd ref="12000001000012"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000014">
+    <nd ref="12000001000012"/>
+    <nd ref="12000001000013"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000015">
+    <nd ref="12000001000013"/>
+    <nd ref="12000001000014"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000016">
+    <nd ref="12000001000014"/>
+    <nd ref="12000001000015"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000017">
+    <nd ref="12000001000015"/>
+    <nd ref="12000001000016"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000018">
+    <nd ref="12000001000016"/>
+    <nd ref="12000001000017"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000019">
+    <nd ref="12000001000017"/>
+    <nd ref="12000001000018"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000020">
+    <nd ref="12000001000018"/>
+    <nd ref="12000001000019"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000021">
+    <nd ref="12000001000019"/>
+    <nd ref="12000001000020"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000022">
+    <nd ref="12000001000020"/>
+    <nd ref="12000001000021"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000023">
+    <nd ref="12000001000021"/>
+    <nd ref="12000001000022"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000024">
+    <nd ref="12000001000022"/>
+    <nd ref="12000001000023"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000025">
+    <nd ref="12000001000023"/>
+    <nd ref="12000001000024"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000026">
+    <nd ref="12000001000024"/>
+    <nd ref="12000001000025"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000027">
+    <nd ref="12000001000025"/>
+    <nd ref="12000001000026"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000028">
+    <nd ref="12000001000026"/>
+    <nd ref="12000001000027"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000029">
+    <nd ref="12000001000027"/>
+    <nd ref="12000001000028"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000030">
+    <nd ref="12000001000028"/>
+    <nd ref="12000001000029"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000031">
+    <nd ref="12000001000029"/>
+    <nd ref="12000001000030"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000032">
+    <nd ref="12000001000030"/>
+    <nd ref="12000001000031"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000033">
+    <nd ref="12000001000031"/>
+    <nd ref="12000001000032"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000034">
+    <nd ref="12000001000032"/>
+    <nd ref="12000001000033"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000035">
+    <nd ref="12000001000033"/>
+    <nd ref="12000001000034"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000036">
+    <nd ref="12000001000034"/>
+    <nd ref="12000001000035"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000037">
+    <nd ref="12000001000035"/>
+    <nd ref="12000001000036"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000038">
+    <nd ref="12000001000036"/>
+    <nd ref="12000001000037"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000039">
+    <nd ref="12000001000037"/>
+    <nd ref="12000001000038"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000040">
+    <nd ref="12000001000038"/>
+    <nd ref="12000001000039"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000041">
+    <nd ref="12000001000039"/>
+    <nd ref="12000001000040"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000042">
+    <nd ref="12000001000040"/>
+    <nd ref="12000001000041"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000043">
+    <nd ref="12000001000041"/>
+    <nd ref="12000001000042"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000044">
+    <nd ref="12000001000042"/>
+    <nd ref="12000001000043"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000045">
+    <nd ref="12000001000043"/>
+    <nd ref="12000001000044"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000046">
+    <nd ref="12000001000044"/>
+    <nd ref="12000001000045"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000047">
+    <nd ref="12000001000045"/>
+    <nd ref="12000001000046"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000048">
+    <nd ref="12000001000046"/>
+    <nd ref="12000001000047"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000049">
+    <nd ref="12000001000047"/>
+    <nd ref="12000001000048"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000050">
+    <nd ref="12000001000048"/>
+    <nd ref="12000001000049"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000051">
+    <nd ref="12000001000049"/>
+    <nd ref="12000001000050"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000052">
+    <nd ref="12000001000050"/>
+    <nd ref="12000001000051"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000053">
+    <nd ref="12000001000051"/>
+    <nd ref="12000001000052"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000054">
+    <nd ref="12000001000052"/>
+    <nd ref="12000001000053"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000055">
+    <nd ref="12000001000053"/>
+    <nd ref="12000001000054"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000056">
+    <nd ref="12000001000054"/>
+    <nd ref="12000001000055"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000057">
+    <nd ref="12000001000055"/>
+    <nd ref="12000001000056"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000058">
+    <nd ref="12000001000056"/>
+    <nd ref="12000001000057"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000059">
+    <nd ref="12000001000057"/>
+    <nd ref="12000001000058"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000060">
+    <nd ref="12000001000058"/>
+    <nd ref="12000001000059"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000061">
+    <nd ref="12000001000059"/>
+    <nd ref="12000001000060"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000062">
+    <nd ref="12000001000060"/>
+    <nd ref="12000001000061"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000063">
+    <nd ref="12000001000061"/>
+    <nd ref="12000001000062"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000064">
+    <nd ref="12000001000062"/>
+    <nd ref="12000001000061"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000065">
+    <nd ref="12000001000061"/>
+    <nd ref="12000001000026"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000066">
+    <nd ref="12000001000026"/>
+    <nd ref="12000001000062"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000067">
+    <nd ref="12000001000062"/>
+    <nd ref="12000001000027"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000068">
+    <nd ref="12000001000027"/>
+    <nd ref="12000001000062"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000069">
+    <nd ref="12000001000062"/>
+    <nd ref="12000001000063"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000070">
+    <nd ref="12000001000063"/>
+    <nd ref="12000001000064"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000071">
+    <nd ref="12000001000064"/>
+    <nd ref="12000001000065"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000072">
+    <nd ref="12000001000065"/>
+    <nd ref="12000001000031"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000073">
+    <nd ref="12000001000031"/>
+    <nd ref="12000001000066"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000074">
+    <nd ref="12000001000066"/>
+    <nd ref="12000001000067"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000075">
+    <nd ref="12000001000067"/>
+    <nd ref="12000001000068"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000076">
+    <nd ref="12000001000034"/>
+    <nd ref="12000001000068"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000077">
+    <nd ref="12000001000068"/>
+    <nd ref="12000001000069"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000078">
+    <nd ref="12000001000069"/>
+    <nd ref="12000001000070"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000079">
+    <nd ref="12000001000070"/>
+    <nd ref="12000001000071"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000080">
+    <nd ref="12000001000071"/>
+    <nd ref="12000001000072"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000081">
+    <nd ref="12000001000072"/>
+    <nd ref="12000001000073"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000082">
+    <nd ref="12000001000073"/>
+    <nd ref="12000001000074"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000083">
+    <nd ref="12000001000074"/>
+    <nd ref="12000001000075"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000084">
+    <nd ref="12000001000075"/>
+    <nd ref="12000001000076"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000085">
+    <nd ref="12000001000076"/>
+    <nd ref="12000001000077"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000086">
+    <nd ref="12000001000077"/>
+    <nd ref="12000001000078"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000087">
+    <nd ref="12000001000078"/>
+    <nd ref="12000001000043"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000088">
+    <nd ref="12000001000043"/>
+    <nd ref="12000001000044"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000089">
+    <nd ref="12000001000044"/>
+    <nd ref="12000001000045"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000090">
+    <nd ref="12000001000045"/>
+    <nd ref="12000001000046"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000091">
+    <nd ref="12000001000046"/>
+    <nd ref="12000001000010"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000092">
+    <nd ref="12000001000010"/>
+    <nd ref="12000001000079"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000093">
+    <nd ref="12000001000079"/>
+    <nd ref="12000001000047"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000094">
+    <nd ref="12000001000047"/>
+    <nd ref="12000001000080"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000095">
+    <nd ref="12000001000080"/>
+    <nd ref="12000001000011"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000096">
+    <nd ref="12000001000011"/>
+    <nd ref="12000001000010"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000097">
+    <nd ref="12000001000010"/>
+    <nd ref="12000001000081"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000098">
+    <nd ref="12000001000081"/>
+    <nd ref="12000001000008"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000099">
+    <nd ref="12000000000049"/>
+    <nd ref="12000001000082"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000100">
+    <nd ref="12000001000082"/>
+    <nd ref="12000001000083"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000101">
+    <nd ref="12000001000083"/>
+    <nd ref="12000001000084"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000102">
+    <nd ref="12000001000084"/>
+    <nd ref="12000001000085"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000103">
+    <nd ref="12000001000085"/>
+    <nd ref="12000001000086"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000104">
+    <nd ref="12000001000086"/>
+    <nd ref="12000001000087"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000105">
+    <nd ref="12000001000087"/>
+    <nd ref="12000001000088"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000106">
+    <nd ref="12000001000088"/>
+    <nd ref="12000001000089"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000107">
+    <nd ref="12000001000089"/>
+    <nd ref="12000001000090"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000108">
+    <nd ref="12000001000090"/>
+    <nd ref="12000001000091"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000109">
+    <nd ref="12000001000091"/>
+    <nd ref="12000001000092"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000110">
+    <nd ref="12000001000092"/>
+    <nd ref="12000001000093"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000111">
+    <nd ref="12000001000093"/>
+    <nd ref="12000001000094"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000112">
+    <nd ref="12000001000094"/>
+    <nd ref="12000001000095"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000113">
+    <nd ref="12000001000095"/>
+    <nd ref="12000000000029"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000114">
+    <nd ref="12000000000049"/>
+    <nd ref="12000001000096"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000115">
+    <nd ref="12000001000096"/>
+    <nd ref="12000001000097"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000116">
+    <nd ref="12000001000097"/>
+    <nd ref="12000001000098"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000117">
+    <nd ref="12000001000098"/>
+    <nd ref="12000001000099"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000118">
+    <nd ref="12000001000099"/>
+    <nd ref="12000001000100"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000119">
+    <nd ref="12000001000100"/>
+    <nd ref="12000001000101"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000120">
+    <nd ref="12000001000101"/>
+    <nd ref="12000001000102"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000121">
+    <nd ref="12000001000102"/>
+    <nd ref="12000000000081"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000122">
+    <nd ref="12000000000022"/>
+    <nd ref="12000001000103"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000123">
+    <nd ref="12000001000103"/>
+    <nd ref="12000001000104"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000124">
+    <nd ref="12000001000103"/>
+    <nd ref="12000001000105"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000125">
+    <nd ref="12000001000105"/>
+    <nd ref="12000001000106"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000126">
+    <nd ref="12000001000106"/>
+    <nd ref="12000001000107"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000127">
+    <nd ref="12000001000107"/>
+    <nd ref="12000001000108"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000128">
+    <nd ref="12000001000108"/>
+    <nd ref="12000001000109"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000129">
+    <nd ref="12000001000109"/>
+    <nd ref="12000001000110"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000130">
+    <nd ref="12000001000110"/>
+    <nd ref="12000001000111"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000131">
+    <nd ref="12000001000111"/>
+    <nd ref="12000001000112"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000132">
+    <nd ref="12000001000112"/>
+    <nd ref="12000001000113"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000133">
+    <nd ref="12000001000113"/>
+    <nd ref="12000001000114"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000134">
+    <nd ref="12000001000114"/>
+    <nd ref="12000001000115"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000135">
+    <nd ref="12000001000115"/>
+    <nd ref="12000001000116"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000136">
+    <nd ref="12000001000116"/>
+    <nd ref="12000001000117"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000137">
+    <nd ref="12000001000117"/>
+    <nd ref="12000001000118"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000138">
+    <nd ref="12000001000118"/>
+    <nd ref="12000001000119"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000139">
+    <nd ref="12000001000119"/>
+    <nd ref="12000001000120"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000140">
+    <nd ref="12000001000120"/>
+    <nd ref="12000001000121"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000141">
+    <nd ref="12000001000121"/>
+    <nd ref="12000001000122"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000142">
+    <nd ref="12000001000122"/>
+    <nd ref="12000001000123"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000143">
+    <nd ref="12000001000123"/>
+    <nd ref="12000001000124"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000144">
+    <nd ref="12000001000124"/>
+    <nd ref="12000001000125"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000145">
+    <nd ref="12000001000125"/>
+    <nd ref="12000001000126"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+  <way id="12000003000146">
+    <nd ref="12000001000126"/>
+    <nd ref="12000001000081"/>
+    <tag k="highway" v="residential"/>
+    <tag k="neko:support" v="0"/>
+  </way>
+</osm>

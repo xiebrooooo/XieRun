@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "source": {
+    "tracks": ".\\history_tracks",
+    "files": 10,
+    "parsed_files": 10,
+    "accepted_files": 7,
+    "excluded_files": 3,
+    "errored_files": 0,
+    "points_total": 3305,
+    "points_used": 2687,
+    "segments_after_jump_split": 7,
+    "simplified_points": 183,
+    "base_osm": null,
+    "base_nodes": 0,
+    "base_edges": 0,
+    "files_detail": [
+      {
+        "path": ".\\history_tracks\\1325427949.json",
+        "date": "2026-09-21",
+        "rrid": "0",
+        "first_flag_ms": 1789977402000,
+        "gain_time": "2026-09-21 15:39:00",
+        "points": 246,
+        "valid_points": 246,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326396192.json",
+        "date": "2026-09-24",
+        "rrid": "0",
+        "first_flag_ms": 1790236875807,
+        "gain_time": "2026-09-24 15:42:36",
+        "points": 271,
+        "valid_points": 271,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326399318.json",
+        "date": "2026-09-24",
+        "rrid": "0",
+        "first_flag_ms": 1790237481000,
+        "gain_time": "2026-09-24 15:53:01",
+        "points": 271,
+        "valid_points": 271,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326399320.json",
+        "date": "2026-09-23",
+        "rrid": "0",
+        "first_flag_ms": 1790149898000,
+        "gain_time": "2026-09-23 15:37:34",
+        "points": 271,
+        "valid_points": 271,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326399322.json",
+        "date": "2026-09-22",
+        "rrid": "0",
+        "first_flag_ms": 1790064702000,
+        "gain_time": "2026-09-22 15:54:28",
+        "points": 394,
+        "valid_points": 394,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326692815.json",
+        "date": "2026-09-25",
+        "rrid": "0",
+        "first_flag_ms": 1790307883000,
+        "gain_time": "2026-09-25 11:25:00",
+        "points": 394,
+        "valid_points": 394,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1326835900.json",
+        "date": "2026-09-26",
+        "rrid": "0",
+        "first_flag_ms": 1790395239951,
+        "gain_time": "2026-09-26 11:45:01",
+        "points": 840,
+        "valid_points": 840,
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "path": ".\\history_tracks\\1327073829.json",
+        "date": "2026-09-27",
+        "rrid": "1327073829",
+        "first_flag_ms": 1790472705299,
+        "gain_time": "2026-09-27 09:31:46",
+        "points": 222,
+        "valid_points": 222,
+        "status": "excluded",
+        "reason": "命中 --exclude-date: 2026-09-27"
+      },
+      {
+        "path": ".\\history_tracks\\1327075488.json",
+        "date": "2026-09-27",
+        "rrid": "1327075488",
+        "first_flag_ms": 1790475071355,
+        "gain_time": "2026-09-27 10:11:15",
+        "points": 198,
+        "valid_points": 198,
+        "status": "excluded",
+        "reason": "命中 --exclude-date: 2026-09-27"
+      },
+      {
+        "path": ".\\history_tracks\\1327075643.json",
+        "date": "2026-09-27",
+        "rrid": "1327075643",
+        "first_flag_ms": 1790475066355,
+        "gain_time": "2026-09-27 10:11:11",
+        "points": 198,
+        "valid_points": 198,
+        "status": "excluded",
+        "reason": "命中 --exclude-date: 2026-09-27"
+      }
+    ]
+  },
+  "network": {
+    "nodes": 68,
+    "directed_edges": 176,
+    "undirected_edges": 88,
+    "buildings": 0,
+    "components": 1,
+    "largest_component_nodes": 68,
+    "bbox_wgs84": {
+      "min_lat": 42.84425729507305,
+      "min_lon": 125.12146289211387,
+      "max_lat": 42.85098325251227,
+      "max_lon": 125.12791917093695
+    }
+  },
+  "parameters": {
+    "snap_m": 8.0,
+    "simplify_m": 6.0,
+    "min_segment_m": 2.0,
+    "max_jump_m": 200.0
+  },
+  "filters": {
+    "include_date": [],
+    "exclude_date": [
+      "2026-09-27",
+      "2026-09-28"
+    ],
+    "include_file": [],
+    "exclude_file": []
+  },
+  "warnings": [],
+  "output": ".\\campus_network_filtered.osm"
+}

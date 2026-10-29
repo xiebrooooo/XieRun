@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "network": ".\\campus_network.osm",
+  "nodes": 117,
+  "directed_edges": 308,
+  "components": 2,
+  "component_sizes": [
+    104,
+    13
+  ],
+  "largest_component_nodes": 104,
+  "endpoint_nodes": 0,
+  "bbox_wgs84": {
+    "min_lat": 42.8403563,
+    "min_lon": 125.1191321,
+    "max_lat": 42.8531036,
+    "max_lon": 125.1281113
+  },
+  "points_checked": 5,
+  "points": [
+    {
+      "name": "点位9",
+      "wgs84": {
+        "lat": 42.85102824384002,
+        "lon": 125.126655205727
+      },
+      "nearest_distance_m": 1.677554090135506,
+      "component": 0,
+      "component_nodes": 104,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位3",
+      "wgs84": {
+        "lat": 42.84414537336557,
+        "lon": 125.12150694915923
+      },
+      "nearest_distance_m": 0.013170291694994334,
+      "component": 0,
+      "component_nodes": 104,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位4",
+      "wgs84": {
+        "lat": 42.84652378556363,
+        "lon": 125.12279479593114
+      },
+      "nearest_distance_m": 2.255296718757361,
+      "component": 0,
+      "component_nodes": 104,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位7",
+      "wgs84": {
+        "lat": 42.84904443963167,
+        "lon": 125.12527996946473
+      },
+      "nearest_distance_m": 2.0648509772838435,
+      "component": 0,
+      "component_nodes": 104,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位5",
+      "wgs84": {
+        "lat": 42.84781848542027,
+        "lon": 125.12492677533547
+      },
+      "nearest_distance_m": 2.6654687681134037,
+      "component": 0,
+      "component_nodes": 104,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    }
+  ],
+  "route_self_check": true,
+  "route_error": null,
+  "snap_m": 30.0,
+  "warnings": [
+    "路网存在 2 个连通分量，最大分量仅 104 个节点",
+    "路线规划自检通过，长度 1922m"
+  ]
+}

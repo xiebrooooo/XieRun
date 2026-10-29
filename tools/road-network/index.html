@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>高德卫星底图 + 路网矢量图层（接入示例）</title>
+<style>
+  html, body { margin: 0; height: 100%; font: 13px/1.5 "Microsoft YaHei", system-ui, sans-serif; }
+  #bar { position: fixed; left: 0; top: 0; right: 0; padding: 6px 10px; z-index: 10;
+         background: rgba(255,255,255,.92); border-bottom: 1px solid #d8dedb;
+         display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  #bar label { display: inline-flex; gap: 4px; align-items: center; }
+  #info { margin-left: auto; color: #5b6b62; }
+  #map { position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+         background: #eef2f0; cursor: grab; }
+  #map.drag { cursor: grabbing; }
+  #hint { position: fixed; left: 10px; bottom: 10px; z-index: 10; color: #42514a;
+          background: rgba(255,255,255,.86); border: 1px solid #d8dedb; border-radius: 4px;
+          padding: 6px 8px; max-width: 620px; }
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <strong>高德卫星底图 + 路网</strong>
+  <label><input type="checkbox" id="cbSat" checked> 卫星底图(stete=6)</label>
+  <label><input type="checkbox" id="cbOvl"> 道路标注(style=8)</label>
+  <label>打开 .osm：<input type="file" id="file" accept=".osm"></label>
+  <span id="info">层级 -</span>
+</div>
+
+<canvas id="map"></canvas>
+<div id="hint">
+  拖动 = 平移，滚轮 = 缩放。路网图层画在卫星底图**上面**；底图接入代码在
+  <code>amap-satellite-layer.js</code>，本页的 <code>drawRoadNetwork()</code> 就是「你现有的绘制逻辑」。
+</div>
+
+<!-- 底图图层模块（零依赖，纯 canvas） -->
+<script src="amap-satellite-layer.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var canvas = document.getElementById('map');
+  var ctx = canvas.getContext('2d');
+  var info = document.getElementById('info');
+
+  // ── 极简地图状态：中心点(GCJ-02) + 瓦片层级 z ──────────────────────────
+  var state = { z: 17, lat: 29.2650505, lon: 113.1589562 };
+
+  function worldPx(lat, lon, z) {                       // 经纬度 → 世界像素
+    var s = 256 * Math.pow(2, z);
+    var r = lat * Math.PI / 180;
+    return [((lon + 180) / 360) * s,
+            ((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * s];
+  }
+  function worldPxInv(x, y, z) {                        // 世界像素 → 经纬度
+    var s = 256 * Math.pow(2, z);
+    var lon = (x / s) * 360 - 180;
+    var n = Math.PI - 2 * Math.PI * (y / s);
+    return [(180 / Math.PI) * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))), lon];
+  }
+
+  // ★ 交给底图图层的三个投影函数：复用同一套投影 → 两层天然对齐
+  function project(lat, lon) {
+    var c = worldPx(state.lat, state.lon, state.z);
+    var p = worldPx(lat, lon, state.z);
+    return [p[0] - c[0] + canvas.width / 2, p[1] - c[1] + canvas.height / 2];
+  }
+  function unproject(x, y) {
+    var c = worldPx(state.lat, state.lon, state.z);
+    return worldPxInv(c[0] + x - canvas.width / 2, c[1] + y - canvas.height / 2, state.z);
+  }
+  function zoomLevel() { return state.z; }
+
+  // ── ① 底图层（高德卫星）───────────────────────────────────────────────
+  var base = new AmapSatelliteLayer({
+    project: project,
+    unproject: unproject,
+    zoom: zoomLevel,
+    tileFrame: 'gcj02',            // 本示例：路网也统一在 GCJ-02 下绘制
+    overlay: false,
+    onNeedRedraw: function () { render(); },
+  });
+
+  // ── ② 你的路网数据与绘制逻辑（保持原样，不改）─────────────────────────
+  var roads = [];                  // [{ pts: [[latGcj, lonGcj], ...] }]
+
+  function drawRoadNetwork() {
+    if (!roads.length) return;
+    ctx.save();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#ff9800';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    for (var i = 0; i < roads.length; i++) {
+      var pts = roads[i].pts;
+      if (pts.length < 2) continue;
+      ctx.beginPath();
+      for (var j = 0; j < pts.length; j++) {
+        var p = project(pts[j][0], pts[j][1]);
+        if (j === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+      }
+      ctx.stroke();
+    }
+    // 节点
+    ctx.fillStyle = 'rgba(60,80,70,.75)';
+    for (var k = 0; k < roads.length; k++) {
+      var q = roads[k].pts;
+      for (var m = 0; m < q.length; m++) {
+        var s = project(q[m][0], q[m][1]);
+        ctx.beginPath(); ctx.arc(s[0], s[1], 2.2, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  // ── 渲染循环：底图 → 路网（顺序即图层顺序）───────────────────────────
+  function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    base.draw(ctx);            // ① 高德卫星瓦片（最底层）
+    drawRoadNetwork();         // ② 你的路网矢量（压在底图上面）
+    info.textContent = '层级 z=' + state.z +
+      (base.pending ? ' · 瓦片加载中 ' + base.pending : '') +
+      (base.errors ? ' · 失败 ' + base.errors : '');
+  }
+
+  // ── 视图交互：平移 / 缩放 ─────────────────────────────────────────────
+  function resize() {
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(canvas.clientWidth * dpr);
+    canvas.height = Math.floor(canvas.clientHeight * dpr);
+    base.invalidate();
+    render();
+  }
+  window.addEventListener('resize', resize);
+
+  var dragging = false, last = null;
+  canvas.addEventListener('mousedown', function (e) {
+    dragging = true; last = [e.clientX, e.clientY]; canvas.classList.add('drag');
+  });
+  window.addEventListener('mouseup', function () {
+    dragging = false; canvas.classList.remove('drag');
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    var dpr = window.devicePixelRatio || 1;
+    var dx = (e.clientX - last[0]) * dpr, dy = (e.clientY - last[1]) * dpr;
+    last = [e.clientX, e.clientY];
+    var c = worldPx(state.lat, state.lon, state.z);
+    var inv = worldPxInv(c[0] - dx, c[1] - dy, state.z);
+    state.lat = inv[0]; state.lon = inv[1];
+    base.invalidate(); render();
+  });
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    // 以鼠标为锚点，整数层级切换（瓦片层级必须为整数）
+    var rect = canvas.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    var mx = (e.clientX - rect.left) * dpr, my = (e.clientY - rect.top) * dpr;
+    var before = unproject(mx, my);
+    var nz = Math.max(AmapSatelliteLayer.MIN_Z,
+             Math.min(AmapSatelliteLayer.MAX_Z, state.z + (e.deltaY < 0 ? 1 : -1)));
+    if (nz === state.z) return;
+    state.z = nz;
+    var after = unproject(mx, my);        // 保持鼠标下的地理位置不动
+    state.lat += before[0] - after[0];
+    state.lon += before[1] - after[1];
+    base.invalidate(); render();
+  }, { passive: false });
+
+  // ── 控件 ─────────────────────────────────────────────────────────────
+  document.getElementById('cbSat').addEventListener('change', function (e) {
+    base.setEnabled(e.target.checked); render();
+  });
+  document.getElementById('cbOvl').addEventListener('change', function (e) {
+    base.setOverlay(e.target.checked); render();
+  });
+
+  // 选本地 .osm（file:// 也能用：FileReader 不受 CORS 限制）
+  document.getElementById('file').addEventListener('change', function (e) {
+    var f = e.target.files && e.target.files[0];
+    if (!f) return;
+    var fr = new FileReader();
+    fr.onload = function () { loadOsm(fr.result, f.name); };
+    fr.readAsText(f, 'utf-8');
+  });
+
+  function loadOsm(text, name) {
+    var doc = new DOMParser().parseFromString(text, 'application/xml');
+    var nodes = {};
+    var ns = doc.getElementsByTagName('node');
+    for (var i = 0; i < ns.length; i++) {
+      var id = ns[i].getAttribute('id');
+      nodes[id] = [parseFloat(ns[i].getAttribute('lat')), parseFloat(ns[i].getAttribute('lon'))];
+    }
+    var ws = doc.getElementsByTagName('way');
+    var out = [];
+    for (var w = 0; w < ws.length; w++) {
+      var refs = ws[w].getElementsByTagName('nd');
+      var pts = [];
+      for (var r = 0; r < refs.length; r++) {
+        var nd = nodes[refs[r].getAttribute('ref')];
+        if (!nd) continue;
+        // OSM 是 WGS84；本示例统一画在 GCJ-02 下，所以逐点转 GCJ
+        var g = AmapSatelliteLayer.coord.wgs2gcj(nd[0], nd[1]);
+        pts.push(g);
+      }
+      if (pts.length >= 2) out.push({ pts: pts });
+      if (out.length > 3000) break;
+    }
+    roads = out;
+    if (out.length) {
+      // 视野对准路网中心
+      var slat = 0, slon = 0, cnt = 0;
+      for (var a = 0; a < out.length; a++) for (var b = 0; b < out[a].pts.length; b++) {
+        slat += out[a].pts[b][0]; slon += out[a].pts[b][1]; cnt++;
+      }
+      if (cnt) { state.lat = slat / cnt; state.lon = slon / cnt; }
+      base.invalidate(); render();
+      document.title = name + ' - 路网底图示例';
+    } else {
+      alert('这个 .osm 里没解析到 way/nd（节点数 ' + Object.keys(nodes).length + '）');
+    }
+  }
+
+  // ── 启动 ─────────────────────────────────────────────────────────────
+  resize();
+  base.prefetch(state.lat, state.lon, state.z, 2);   // 可选：预热中心 5×5 瓦片
+  render();
+})();
+</script>
+</body>
+</html>

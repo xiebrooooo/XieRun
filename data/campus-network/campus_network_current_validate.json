@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "network": ".\\campus_network_filtered.osm",
+  "nodes": 68,
+  "directed_edges": 176,
+  "components": 1,
+  "component_sizes": [
+    68
+  ],
+  "largest_component_nodes": 68,
+  "endpoint_nodes": 0,
+  "bbox_wgs84": {
+    "min_lat": 42.8442573,
+    "min_lon": 125.1214629,
+    "max_lat": 42.8509833,
+    "max_lon": 125.1279192
+  },
+  "points_checked": 5,
+  "points": [
+    {
+      "name": "点位9",
+      "wgs84": {
+        "lat": 42.85102824384002,
+        "lon": 125.126655205727
+      },
+      "nearest_distance_m": 5.018692250626819,
+      "component": 0,
+      "component_nodes": 68,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位10",
+      "wgs84": {
+        "lat": 42.84790273577254,
+        "lon": 125.127939196634
+      },
+      "nearest_distance_m": 1.9605581078145253,
+      "component": 0,
+      "component_nodes": 68,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位7",
+      "wgs84": {
+        "lat": 42.84904443963167,
+        "lon": 125.12527996946473
+      },
+      "nearest_distance_m": 2.064845324657438,
+      "component": 0,
+      "component_nodes": 68,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位8",
+      "wgs84": {
+        "lat": 42.8487585917556,
+        "lon": 125.1262691113074
+      },
+      "nearest_distance_m": 0.13807990036100148,
+      "component": 0,
+      "component_nodes": 68,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    },
+    {
+      "name": "点位5",
+      "wgs84": {
+        "lat": 42.84781848542027,
+        "lon": 125.12492677533547
+      },
+      "nearest_distance_m": 2.665446862673702,
+      "component": 0,
+      "component_nodes": 68,
+      "on_largest_component": true,
+      "snap_ok": true,
+      "projected": true
+    }
+  ],
+  "route_self_check": true,
+  "route_error": null,
+  "snap_m": 30.0,
+  "warnings": [
+    "路线规划自检通过，长度 2012m"
+  ]
+}

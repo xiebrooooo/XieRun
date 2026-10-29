@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "source": {
+    "tracks": ".\\history_tracks",
+    "files": 10,
+    "parsed_files": 10,
+    "points_total": 3305,
+    "points_valid": 3305,
+    "segments_after_jump_split": 10,
+    "simplified_points": 241,
+    "base_osm": null,
+    "base_nodes": 0,
+    "base_edges": 0
+  },
+  "network": {
+    "nodes": 117,
+    "directed_edges": 308,
+    "undirected_edges": 154,
+    "buildings": 0,
+    "components": 2,
+    "largest_component_nodes": 104,
+    "bbox_wgs84": {
+      "min_lat": 42.84035625652125,
+      "min_lon": 125.11913209876596,
+      "max_lat": 42.853103562599934,
+      "max_lon": 125.1281112622437
+    }
+  },
+  "parameters": {
+    "snap_m": 8.0,
+    "simplify_m": 6.0,
+    "min_segment_m": 2.0,
+    "max_jump_m": 200.0
+  },
+  "warnings": [],
+  "output": ".\\campus_network.osm"
+}

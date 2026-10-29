@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>路网编辑器 · 高德卫星底图版</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden;
+    font: 13px/1.6 "Microsoft YaHei", system-ui, sans-serif; color: #26332d; }
+  #bar1, #bar2 { position: fixed; left: 0; right: 0; z-index: 10;
+    background: rgba(255,255,255,.94); border-bottom: 1px solid #d7dedb;
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 5px 10px; }
+  #bar1 { top: 0; }
+  #bar2 { top: 34px; border-top: 0; }
+  #map { position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+    background: #eef2f0; cursor: crosshair; touch-action: none; }
+  #map.panning { cursor: grabbing; }
+  #map.locked { cursor: default; }
+  .btn { border: 1px solid #c3cdc8; background: #fff; border-radius: 3px;
+    padding: 2px 8px; cursor: pointer; }
+  .btn:hover { background: #f1f6f3; }
+  .btn.on { background: #1f6feb; border-color: #1f6feb; color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  label.chk { display: inline-flex; gap: 3px; align-items: center; cursor: pointer; }
+  input[type=text] { width: 104px; padding: 1px 4px; border: 1px solid #c3cdc8; border-radius: 3px; }
+  .sep { width: 1px; height: 18px; background: #d7dedb; }
+  .hint { color: #6b7a72; }
+  #status { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: rgba(255,255,255,.94); border-top: 1px solid #d7dedb;
+    padding: 4px 10px; display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+  #status b { font-weight: 600; }
+  #toast { position: fixed; left: 50%; bottom: 46px; transform: translateX(-50%); z-index: 20;
+    background: rgba(30,40,36,.9); color: #fff; padding: 7px 14px; border-radius: 4px;
+    opacity: 0; transition: opacity .18s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div id="bar1">
+  <button class="btn" id="btnOpen">打开 .osm</button>
+  <button class="btn" id="btnSave">保存 .osm</button>
+  <button class="btn" id="btnSaveAs">另存为</button>
+  <button class="btn" id="btnText">导出文本</button>
+  <button class="btn" id="btnRestore">恢复上次</button>
+  <select id="preset" title="直接打开预设路网">
+    <option value="">预设路网…</option>
+    <option value="辽源职业技术学院.osm">辽源职业技术学院（当前）</option>
+    <option value="辽源职业技术学院.原始.osm">辽源职业技术学院（优化前）</option>
+    <option value="天津-操场-8道-优化.osm">天津操场 8 道（1.22m）</option>
+    <option value="天津-操场跑道-6圈.osm">天津操场 6 圈（1.5m）</option>
+  </select>
+  <input type="file" id="file" accept=".osm" style="display:none">
+  <span class="sep"></span>
+  <button class="btn on" data-mode="del">删边</button>
+  <button class="btn" data-mode="add">连线</button>
+  <button class="btn" data-mode="move">移点</button>
+  <button class="btn" data-mode="delnode">删点</button>
+  <button class="btn" data-mode="cp">打卡点</button>
+  <span class="sep"></span>
+  <button class="btn" id="btnUndo">撤销</button>
+  <button class="btn" id="btnRedo">重做</button>
+  <span class="sep"></span>
+  <span title="卫星底图透明度">底图</span>
+  <input type="range" id="opacity" min="10" max="100" value="100" style="width:70px">
+  <span class="sep"></span>
+  <label class="chk"><input type="checkbox" id="cbSat" checked> 卫星</label>
+  <label class="chk"><input type="checkbox" id="cbOvl"> 道路标注</label>
+  <label class="chk"><input type="checkbox" id="cbCp" checked> 打卡点</label>
+  <label class="chk"><input type="checkbox" id="cbNode"> 节点编号</label>
+  <button class="btn" id="btnCpLoad">载入打卡点…</button>
+  <input type="file" id="cpFile" accept=".json,.txt,.csv" style="display:none">
+</div>
+
+<div id="bar2">
+  <b>定位</b>
+  <select id="frame" title="输入框用的是哪种坐标系">
+    <option value="bd">BD09（打卡点/App）</option>
+    <option value="gcj">GCJ02（高德）</option>
+    <option value="wgs">WGS84（OSM）</option>
+  </select>
+  <input type="text" id="lat" placeholder="纬度 例 29.2650505">
+  <input type="text" id="lon" placeholder="经度 例 113.1589562">
+  <button class="btn" id="btnGo">跳转</button>
+  <label class="chk"><input type="checkbox" id="cbLock"> 锁定视图</label>
+  <button class="btn" id="btnPinClear">清除定位针</button>
+  <span class="sep"></span>
+  <b>跑道</b>
+  <input type="text" id="ax" value="110" style="width:52px" title="长轴（米）">
+  <span>×</span>
+  <input type="text" id="by" value="105" style="width:52px" title="短轴（米）">
+  <span>m 圈</span>
+  <input type="text" id="lanes" value="6" style="width:34px" title="几圈">
+  <span>间距</span>
+  <input type="text" id="gap" value="1.5" style="width:40px" title="圈间距（米）">
+  <span>m</span>
+  <button class="btn" id="btnTrack">生成跑道</button>
+  <span class="sep"></span>
+  <span class="hint" id="modeHint">左键点路段 = 标记删除；右键拖动 = 平移</span>
+  <span class="sep"></span>
+  <button class="btn" id="btnFit">适配视野</button>
+  <button class="btn" id="btnClear">清空改动</button>
+</div>
+
+<canvas id="map"></canvas>
+<div id="status">
+  <span>鼠标 <b id="stWgs">-</b> <span class="hint">WGS84</span></span>
+  <span><b id="stGcj">-</b> <span class="hint">GCJ02</span></span>
+  <span><b id="stBd">-</b> <span class="hint">BD09</span></span>
+  <span>层级 <b id="stZ">-</b></span>
+  <span>路网 <b id="stNet">-</b></span>
+  <span>改动 <b id="stEdit">-</b></span>
+  <span class="hint" id="stMsg"></span>
+</div>
+<div id="toast"></div>
+
+<!-- 导出文本：把 OSM 原文贴在文本框里，可直接复制（下载被拦时的兜底） -->
+<div id="textPanel" style="display:none;position:fixed;inset:6% 8%;z-index:30;background:#fff;
+     border:1px solid #b9c6c0;border-radius:6px;box-shadow:0 8px 30px rgba(0,0,0,.25);padding:10px;
+     display:none;flex-direction:column;gap:8px">
+  <div style="display:flex;gap:8px;align-items:center">
+    <b>OSM 文本</b>
+    <span class="hint">全选 → 复制，粘贴给 Codex 即可（坐标系 WGS84）</span>
+    <button class="btn" id="btnTextCopy" style="margin-left:auto">全选并复制</button>
+    <button class="btn" id="btnTextClose">关闭</button>
+  </div>
+  <textarea id="textArea" spellcheck="false"
+    style="flex:1;width:100%;font:12px/1.45 Consolas,monospace;border:1px solid #ccd6d1;border-radius:4px"></textarea>
+</div>
+
+<script src="amap-satellite-layer.js"></script>
+<script>
+(function () {
+  'use strict';
+  var CO = AmapSatelliteLayer.coord;          // wgs2gcj / gcj2wgs / gcj2bd / bd2gcj
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 一、视图状态（统一在 GCJ-02 下绘制：底图与路网同系，天然对齐）
+  // ═══════════════════════════════════════════════════════════════════════
+  var state = { z: 17, lat: 29.2650505, lon: 113.1589562 };
+  var canvas = document.getElementById('map');
+  var ctx = canvas.getContext('2d');
+  function worldPx(lat, lon, z) {
+    var s = 256 * Math.pow(2, z), r = lat * Math.PI / 180;
+    return [((lon + 180) / 360) * s,
+            ((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * s];
+  }
+  function worldPxInv(x, y, z) {
+    var s = 256 * Math.pow(2, z);
+    var lon = (x / s) * 360 - 180;
+    var n = Math.PI - 2 * Math.PI * (y / s);
+    return [(180 / Math.PI) * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))), lon];
+  }
+  function project(lat, lon) {                  // GCJ → 屏幕像素
+    var c = worldPx(state.lat, state.lon, state.z), p = worldPx(lat, lon, state.z);
+    return [p[0] - c[0] + canvas.width / 2, p[1] - c[1] + canvas.height / 2];
+  }
+  function unproject(x, y) {                    // 屏幕像素 → GCJ
+    var c = worldPx(state.lat, state.lon, state.z);
+    return worldPxInv(c[0] + x - canvas.width / 2, c[1] + y - canvas.height / 2, state.z);
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 二、底图层（高德卫星）—— 只做底图，不碰下面的路网绘制
+  // ═══════════════════════════════════════════════════════════════════════
+  var base = new AmapSatelliteLayer({
+    project: project, unproject: unproject, zoom: function () { return state.z; },
+    tileFrame: 'gcj02', onNeedRedraw: function () { render(); },
+  });
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 三、路网数据模型
+  //   nodes: id → { lat, lon }        （GCJ-02，编辑用）
+  //   ways : [{ id, refs:[id,id], raw, support, deleted, isNew }]
+  // ═══════════════════════════════════════════════════════════════════════
+  var net = { path: '', header: [], nodes: new Map(), ways: [], nodeOrder: [] };
+  var checkpoints = [];        // [{ name, lat, lon }] GCJ
+  var pins = [];               // 定位针 [{ lat, lon }] GCJ
+  var sel = null;              // 连线模式选中的节点 id
+  var mode = 'del';
+  var dirty = false;
+  var undo = [], redo = [];
+  var nextNodeId = 12000001000000, nextWayId = 12000003000000;
+
+  function gcj2bdStr(lat, lon) { var b = CO.gcj2bd(lat, lon); return b[0].toFixed(6) + ', ' + b[1].toFixed(6); }
+  function gcj2wgsStr(lat, lon) { var w = CO.gcj2wgs(lat, lon); return w[0].toFixed(6) + ', ' + w[1].toFixed(6); }
+  function gcjStr(lat, lon) { return lat.toFixed(6) + ', ' + lon.toFixed(6); }
+
+  // ── 撤销/重做：快照整个编辑态（路网不大，够用） ────────────────────────
+  function snapshot() {
+    return JSON.stringify({
+      nodes: Array.from(net.nodes.entries()),
+      ways: net.ways.map(function (w) {
+        return { id: w.id, refs: w.refs, raw: w.raw, support: w.support, deleted: w.deleted, isNew: w.isNew };
+      }),
+      cps: checkpoints, nn: nextNodeId, nw: nextWayId,
+    });
+  }
+  function pushUndo() { undo.push(snapshot()); if (undo.length > 60) undo.shift(); redo.length = 0; }
+  function restore(s) {
+    var d = JSON.parse(s);
+    net.nodes = new Map(d.nodes);
+    net.ways = d.ways;
+    checkpoints = d.cps;
+    nextNodeId = d.nn; nextWayId = d.nw;
+    render();
+  }
+  function doUndo() { if (!undo.length) return; redo.push(snapshot()); restore(undo.pop()); }
+  function doRedo() { if (!redo.length) return; undo.push(snapshot()); restore(redo.pop()); }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 四、绘制：① 底图 → ② 路网 → ③ 节点/打卡点/定位针
+  // ═══════════════════════════════════════════════════════════════════════
+  function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ① 高德卫星底图（透明度可调，方便看清自己描的线）
+    var opEl = document.getElementById('opacity');
+    var op = opEl ? (parseInt(opEl.value, 10) || 100) / 100 : 1;
+    ctx.save();
+    ctx.globalAlpha = op;
+    base.draw(ctx);
+    ctx.restore();
+    if (!net.ways.length && !net.nodes.size) { drawOverlayInfo(); return; }
+
+    ctx.save();
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    // ② 路段
+    for (var i = 0; i < net.ways.length; i++) {
+      var w = net.ways[i];
+      if (w.refs.length < 2) continue;
+      if (w.deleted) { ctx.setLineDash([6, 5]); ctx.lineWidth = 3; ctx.strokeStyle = '#e74c3c'; }
+      else if (w.isNew) { ctx.setLineDash([]); ctx.lineWidth = 4; ctx.strokeStyle = '#27ae60'; }
+      else if (w.support <= 1) { ctx.setLineDash([]); ctx.lineWidth = 4; ctx.strokeStyle = '#f0932b'; }
+      else { ctx.setLineDash([]); ctx.lineWidth = 3; ctx.strokeStyle = '#2f80ed'; }
+      // 一条 way 可能有多个 nd（折线），逐段画
+      ctx.beginPath();
+      var started = false;
+      for (var ri = 0; ri < w.refs.length; ri++) {
+        var np = net.nodes.get(w.refs[ri]);
+        if (!np) { started = false; continue; }
+        var sp = project(np.lat, np.lon);
+        if (!started) { ctx.moveTo(sp[0], sp[1]); started = true; }
+        else ctx.lineTo(sp[0], sp[1]);
+      }
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // ③ 节点
+    ctx.fillStyle = '#5d6d7e';
+    net.nodes.forEach(function (p, id) {
+      var s = project(p.lat, p.lon);
+      var isSel = id === sel;
+      ctx.beginPath(); ctx.arc(s[0], s[1], isSel ? 6 : 3.2, 0, Math.PI * 2);
+      ctx.fillStyle = isSel ? '#ff3b30' : '#5d6d7e'; ctx.fill();
+      if (document.getElementById('cbNode').checked) {
+        ctx.fillStyle = '#8a97a5'; ctx.font = '11px Consolas, monospace';
+        ctx.fillText(String(id).slice(-5), s[0] + 7, s[1] - 7);
+      }
+    });
+
+    // ③b hover 吸附提示：鼠标靠近哪个节点，就把它圈出来（点下去会接到它）
+    if (hoverNode) {
+      var hpn = net.nodes.get(hoverNode);
+      if (hpn) {
+        var hs = project(hpn.lat, hpn.lon);
+        ctx.beginPath(); ctx.arc(hs[0], hs[1], 9, 0, Math.PI * 2);
+        ctx.strokeStyle = '#1f6feb'; ctx.lineWidth = 2; ctx.stroke();
+      }
+    }
+
+    // ④ 打卡点
+    if (document.getElementById('cbCp').checked) {
+      for (var c = 0; c < checkpoints.length; c++) {
+        var cp = checkpoints[c], sp = project(cp.lat, cp.lon);
+        ctx.beginPath(); ctx.arc(sp[0], sp[1], 9, 0, Math.PI * 2);
+        ctx.strokeStyle = '#f0b400'; ctx.lineWidth = 4; ctx.stroke();
+        ctx.fillStyle = '#b87400'; ctx.font = '12px "Microsoft YaHei"';
+        ctx.fillText(cp.name || ('点位' + (c + 1)), sp[0] + 12, sp[1] - 12);
+      }
+    }
+    // ⑤ 定位针
+    for (var q = 0; q < pins.length; q++) {
+      var pp = project(pins[q].lat, pins[q].lon);
+      ctx.beginPath(); ctx.arc(pp[0], pp[1], 7, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,59,48,.85)'; ctx.fill();
+      ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(pp[0], pp[1] - 7); ctx.lineTo(pp[0], pp[1] - 22);
+      ctx.strokeStyle = '#ff3b30'; ctx.lineWidth = 2; ctx.stroke();
+    }
+    ctx.restore();
+    drawScaleBar();
+    drawOverlayInfo();
+  }
+
+  /** 右下角比例尺：按当前投影算「1 像素 = 多少米」，画一根整洁刻度的尺子。 */
+  function drawScaleBar() {
+    var p0 = project(state.lat, state.lon);
+    var p1 = project(state.lat, state.lon + 0.001);
+    var pxPerDeg = Math.abs(p1[0] - p0[0]);
+    var mPerDeg = 0.001 * 111320 * Math.cos(state.lat * Math.PI / 180);
+    var mPerPx = mPerDeg / Math.max(pxPerDeg, 1e-9);
+    var target = 90 * mPerPx;                       // 目标 ~90px 宽
+    var nice = [5, 10, 20, 50, 100, 200, 500, 1000, 2000];
+    var m = nice[0];
+    for (var i = 0; i < nice.length; i++) { if (nice[i] <= target) m = nice[i]; }
+    var w = m / mPerPx;
+    var x = canvas.width - w - 18, y = canvas.height - 18;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(20,30,26,.85)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y - 5); ctx.lineTo(x, y); ctx.lineTo(x + w, y); ctx.lineTo(x + w, y - 5);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(20,30,26,.95)';
+    ctx.font = '12px Consolas, monospace';
+    ctx.fillText(m + ' m', x + 3, y - 8);
+    ctx.restore();
+  }
+
+  function drawOverlayInfo() {
+    var deleted = net.ways.filter(function (w) { return w.deleted; }).length;
+    var added = net.ways.filter(function (w) { return w.isNew; }).length;
+    document.getElementById('stNet').textContent =
+      net.nodes.size + ' 节点 / ' + net.ways.length + ' 路段';
+    document.getElementById('stEdit').textContent =
+      '删 ' + deleted + ' / 新增 ' + added + (dirty ? ' *' : '');
+    document.getElementById('stZ').textContent = state.z;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 五、拾取
+  // ═══════════════════════════════════════════════════════════════════════
+  function segDist(px, py, ax, ay, bx, by) {
+    var dx = bx - ax, dy = by - ay;
+    if (!dx && !dy) return Math.hypot(px - ax, py - ay);
+    var t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+  }
+  function pickNode(x, y) {
+    var best = null, bd = 12 * (window.devicePixelRatio || 1);
+    net.nodes.forEach(function (p, id) {
+      var s = project(p.lat, p.lon), d = Math.hypot(s[0] - x, s[1] - y);
+      if (d < bd) { bd = d; best = id; }
+    });
+    return best;
+  }
+  function pickWay(x, y) {
+    var best = null, bd = 9 * (window.devicePixelRatio || 1);
+    for (var i = 0; i < net.ways.length; i++) {
+      var w = net.ways[i];
+      for (var k = 0; k + 1 < w.refs.length; k++) {
+        var a = net.nodes.get(w.refs[k]), b = net.nodes.get(w.refs[k + 1]);
+        if (!a || !b) continue;
+        var pa = project(a.lat, a.lon), pb = project(b.lat, b.lon);
+        var d = segDist(x, y, pa[0], pa[1], pb[0], pb[1]);
+        if (d < bd) { bd = d; best = w; }
+      }
+    }
+    return best;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 六、编辑操作
+  // ═══════════════════════════════════════════════════════════════════════
+  function addNode(lat, lon) {
+    var id = String(nextNodeId++);
+    net.nodes.set(id, { lat: lat, lon: lon });
+    return id;
+  }
+  function addWay(aId, bId) {
+    var a = net.nodes.get(aId), b = net.nodes.get(bId);
+    if (!a || !b) return null;
+    var d = Math.hypot((a.lat - b.lat) * 111320, (a.lon - b.lon) * 111320 * Math.cos(a.lat * Math.PI / 180));
+    if (d < 0.5) return null;
+    var w = { id: String(nextWayId++), refs: [aId, bId], raw: null, support: 0, deleted: false, isNew: true };
+    net.ways.push(w);
+    return w;
+  }
+  function setMode(m) {
+    mode = m; sel = null;
+    var btns = document.querySelectorAll('#bar1 .btn[data-mode]');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('on', btns[i].dataset.mode === m);
+    var tips = {
+      del: '左键点路段 = 标记删除 / 再点 = 恢复；右键拖动 = 平移',
+      add: '左键连续点 = 画折线（点空白自动建点并接上）；点已有节点 = 接过去并继续；Esc 断链',
+      move: '左键拖动节点 = 挪动；选中后可用方向键微调（0.5m，Shift+方向键 5m）',
+      delnode: '左键点节点 = 删掉它和它连的所有路段',
+      cp: '左键点一下 = 在该经纬度加一个打卡点',
+    };
+    document.getElementById('modeHint').textContent = tips[m] || '';
+    render();
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 七、交互：平移 / 缩放 / 点击 / 拖动节点
+  // ═══════════════════════════════════════════════════════════════════════
+  var dpr = window.devicePixelRatio || 1;
+  function evPos(e) {
+    var r = canvas.getBoundingClientRect();
+    return [(e.clientX - r.left) * dpr, (e.clientY - r.top) * dpr];
+  }
+  var dragPan = null, dragNode = null;
+  var lastNudge = 0, hoverNode = null;
+  function locked() { return document.getElementById('cbLock').checked; }
+
+  canvas.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  canvas.addEventListener('mousedown', function (e) {
+    var p = evPos(e);
+    if (e.button === 2 || (e.button === 0 && e.shiftKey)) {     // 右键/Shift+左键 = 平移
+      if (locked()) return;
+      dragPan = { x: p[0], y: p[1], c: worldPx(state.lat, state.lon, state.z) };
+      canvas.classList.add('panning');
+      e.preventDefault(); return;
+    }
+    if (e.button !== 0) return;
+    if (mode === 'move') {
+      var nid = pickNode(p[0], p[1]);
+      if (nid) { dragNode = nid; pushUndo(); }
+      return;
+    }
+    if (mode === 'delnode') {
+      var dn = pickNode(p[0], p[1]);
+      if (dn) {
+        pushUndo();
+        net.nodes.delete(dn);
+        net.ways = net.ways.filter(function (w) { return w.refs.indexOf(dn) < 0; });
+        if (sel === dn) sel = null;
+        dirty = true; render();
+      }
+      return;
+    }
+    if (mode === 'del') {
+      var w = pickWay(p[0], p[1]);
+      if (w) { pushUndo(); w.deleted = !w.deleted; dirty = true; render(); }
+    } else if (mode === 'add') {
+      var hit = pickNode(p[0], p[1]);
+      if (hit) {
+        if (sel === null) sel = hit;
+        else if (sel === hit) sel = null;
+        else { pushUndo(); addWay(sel, hit); dirty = true; sel = hit; }
+      } else {
+        var w2 = unproject(p[0], p[1]);
+        pushUndo();
+        var nn = addNode(w2[0], w2[1]);
+        if (sel !== null) addWay(sel, nn);
+        sel = nn; dirty = true;
+      }
+      render();
+    } else if (mode === 'cp') {
+      var g = unproject(p[0], p[1]);
+      pushUndo();
+      checkpoints.push({ name: '点位' + (checkpoints.length + 1), lat: g[0], lon: g[1] });
+      dirty = true; render();
+    }
+  });
+  window.addEventListener('mouseup', function () {
+    dragPan = null; dragNode = null; canvas.classList.remove('panning');
+  });
+  window.addEventListener('mousemove', function (e) {
+    var p = evPos(e);
+    var g = unproject(p[0], p[1]);
+    document.getElementById('stGcj').textContent = gcjStr(g[0], g[1]);
+    document.getElementById('stWgs').textContent = gcj2wgsStr(g[0], g[1]);
+    document.getElementById('stBd').textContent = gcj2bdStr(g[0], g[1]);
+    if (dragPan) {
+      var c = dragPan.c;
+      var inv = worldPxInv(c[0] - (p[0] - dragPan.x), c[1] - (p[1] - dragPan.y), state.z);
+      state.lat = inv[0]; state.lon = inv[1];
+      base.invalidate(); render();
+    } else if (dragNode) {
+      var n = net.nodes.get(dragNode);
+      if (n) { n.lat = g[0]; n.lon = g[1]; dirty = true; render(); }
+    } else {
+      // 只在高亮节点变化时重画，避免鼠标移动一直重绘
+      var h = pickNode(p[0], p[1]);
+      if (h !== hoverNode) { hoverNode = h; render(); }
+    }
+  });
+  canvas.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    if (locked()) return;
+    var p = evPos(e), before = unproject(p[0], p[1]);
+    var nz = Math.max(AmapSatelliteLayer.MIN_Z,
+             Math.min(AmapSatelliteLayer.MAX_Z, state.z + (e.deltaY < 0 ? 1 : -1)));
+    if (nz === state.z) return;
+    state.z = nz;
+    var after = unproject(p[0], p[1]);
+    state.lat += before[0] - after[0]; state.lon += before[1] - after[1];
+    base.invalidate(); render();
+  }, { passive: false });
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 八、Osm 读写（存盘统一 WGS84，与 Rust/App 端一致）
+  // ═══════════════════════════════════════════════════════════════════════
+  function loadOsmText(text, name) {
+    var doc = new DOMParser().parseFromString(text, 'application/xml');
+    var ns = doc.getElementsByTagName('node'), i;
+    net.nodes = new Map();
+    for (i = 0; i < ns.length; i++) {
+      var w = CO.wgs2gcj(parseFloat(ns[i].getAttribute('lat')), parseFloat(ns[i].getAttribute('lon')));
+      net.nodes.set(ns[i].getAttribute('id'), { lat: w[0], lon: w[1] });
+    }
+    var ws = doc.getElementsByTagName('way');
+    net.ways = [];
+    for (i = 0; i < ws.length; i++) {
+      var refs = [];
+      var nds = ws[i].getElementsByTagName('nd');
+      for (var r = 0; r < nds.length; r++) refs.push(nds[r].getAttribute('ref'));
+      if (refs.length < 2) continue;
+      var supEl = ws[i].getElementsByTagName('tag'), sup = 0;
+      for (var t = 0; t < supEl.length; t++) {
+        if (supEl[t].getAttribute('k') === 'neko:support') sup = parseInt(supEl[t].getAttribute('v'), 10) || 0;
+      }
+      net.ways.push({ id: ws[i].getAttribute('id'), refs: refs, raw: ws[i].innerHTML, support: sup, deleted: false, isNew: false });
+    }
+    net.path = name || net.path;
+    dirty = false; undo.length = 0; redo.length = 0; sel = null;
+    fitToNet();
+    toast('已载入 ' + net.nodes.size + ' 节点 / ' + net.ways.length + ' 路段');
+  }
+
+  function buildOsm() {
+    var out = ['<?xml version="1.0" encoding="UTF-8"?>', '<osm version="0.6" generator="web-network-editor">'];
+    var kept = net.ways.filter(function (w) { return !w.deleted; }).length;
+    out.push('  <!-- 网页路网编辑器修改：节点 ' + net.nodes.size + ' / 路段 ' + kept + ' -->');
+    net.nodes.forEach(function (p, id) {
+      var wgs = CO.gcj2wgs(p.lat, p.lon);
+      out.push('  <node id="' + id + '" lat="' + wgs[0].toFixed(7) + '" lon="' + wgs[1].toFixed(7) + '"/>');
+    });
+    net.ways.forEach(function (w) {
+      if (w.deleted) return;
+      if (!w.isNew && w.raw) {
+        out.push('  <way id="' + w.id + '">' + w.raw + '</way>');   // 原样保留 tag
+      } else {
+        out.push('  <way id="' + w.id + '">');
+        for (var i = 0; i < w.refs.length; i++) out.push('    <nd ref="' + w.refs[i] + '"/>');
+        out.push('    <tag k="highway" v="residential"/>');
+        out.push('    <tag k="neko:support" v="0"/>');
+        out.push('  </way>');
+      }
+    });
+    out.push('</osm>', '');
+    return out.join('\n');
+  }
+
+  function download(name, text) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'application/xml' }));
+    a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+  }
+  /**
+   * 保存：**不使用任何弹窗**（prompt/confirm 在嵌入式浏览器里常被屏蔽，
+   * 会导致「点了没反应」）。直接下载 + 同时把文本复制到剪贴板，两条路任选其一。
+   */
+  function saveAs() {
+    if (!net.nodes.size) { toast('还没有路网数据'); return; }
+    var base = (net.path || 'builtin-campus-network.osm').replace(/\.osm$/i, '');
+    var name = base + '.osm';
+    var text = buildOsm();
+    var copied = copyToClipboard(text);
+    try { download(name, text); } catch (e) { /* 下载被拦就走剪贴板 */ }
+    dirty = false; render();
+    toast(copied
+      ? '已复制到剪贴板（' + text.length + ' 字符），同时尝试下载 ' + name
+      : '已尝试下载 ' + name + '；若没出现，请点「导出文本」手动复制');
+  }
+
+  /** 复制文本：execCommand 优先（嵌入式浏览器最靠谱），再试 async clipboard。 */
+  function copyToClipboard(text) {
+    var ok = false;
+    try {
+      var ta = document.getElementById('textArea');
+      ta.value = text;
+      ta.removeAttribute('readonly');
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      ok = document.execCommand('copy');
+    } catch (e) { ok = false; }
+    if (!ok && navigator.clipboard && navigator.clipboard.writeText) {
+      try { navigator.clipboard.writeText(text); ok = true; } catch (e) {}
+    }
+    return ok;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 九、打卡点载入（App 的 points_cache.json → BD 转 GCJ）
+  // ═══════════════════════════════════════════════════════════════════════
+  function loadCheckpoints(text, isJson) {
+    var out = [];
+    if (isJson) {
+      var d = JSON.parse(text);
+      var pts = (d && d.points) || [];
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], lat = parseFloat(p.lat), lon = parseFloat(p.lon);
+        if (!lat || !lon) {                      // 回退 glat/glon（GCJ）
+          lat = parseFloat(p.glat); lon = parseFloat(p.glon);
+          if (!lat || !lon) continue;
+        } else {
+          var g = CO.bd2gcj(lat, lon); lat = g[0]; lon = g[1];   // BD → GCJ
+        }
+        out.push({ name: p.pointName || ('点位' + (i + 1)), lat: lat, lon: lon });
+      }
+    } else {
+      text.split(/\r?\n/).forEach(function (line, i) {
+        line = line.trim(); if (!line || line[0] === '#') return;
+        var a = line.split(/[,\t;]/);
+        if (a.length < 2) return;
+        var la = parseFloat(a[0]), lo = parseFloat(a[1]);
+        if (isNaN(la) || isNaN(lo)) return;
+        // 文本里的坐标按 **BD-09** 理解（和 App 打卡点同系），内部转 GCJ
+        var g2 = CO.bd2gcj(la, lo);
+        out.push({ name: (a[2] || ('点位' + (i + 1))).trim(), lat: g2[0], lon: g2[1] });
+      });
+    }
+    checkpoints = out;
+    render();
+    toast('已载入 ' + out.length + ' 个打卡点');
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 十、视图辅助：适配 / 定位跳转 / 锁定
+  // ═══════════════════════════════════════════════════════════════════════
+  function fitToNet() {
+    if (!net.nodes.size) { base.invalidate(); render(); return; }
+    var mnLa = 90, mxLa = -90, mnLo = 180, mxLo = -180;
+    net.nodes.forEach(function (p) {
+      mnLa = Math.min(mnLa, p.lat); mxLa = Math.max(mxLa, p.lat);
+      mnLo = Math.min(mnLo, p.lon); mxLo = Math.max(mxLo, p.lon);
+    });
+    checkpoints.forEach(function (c) {
+      mnLa = Math.min(mnLa, c.lat); mxLa = Math.max(mxLa, c.lat);
+      mnLo = Math.min(mnLo, c.lon); mxLo = Math.max(mxLo, c.lon);
+    });
+    state.lat = (mnLa + mxLa) / 2; state.lon = (mnLo + mxLo) / 2;
+    for (var z = AmapSatelliteLayer.MAX_Z; z >= AmapSatelliteLayer.MIN_Z; z--) {
+      var p0 = worldPx(mxLa, mnLo, z), p1 = worldPx(mnLa, mxLo, z);
+      if (Math.abs(p1[0] - p0[0]) < canvas.width * 0.8 &&
+          Math.abs(p1[1] - p0[1]) < canvas.height * 0.8) { state.z = z; break; }
+    }
+    base.invalidate(); render();
+  }
+  function gotoLatLon() {
+    var la = parseFloat(document.getElementById('lat').value);
+    var lo = parseFloat(document.getElementById('lon').value);
+    if (isNaN(la) || isNaN(lo)) { toast('请填写合法经纬度'); return; }
+    // 输入框的坐标系由下拉框决定；内部统一换算成 GCJ-02 再定位
+    var f = document.getElementById('frame').value;
+    var g = f === 'gcj' ? [la, lo] : (f === 'wgs' ? CO.wgs2gcj(la, lo) : CO.bd2gcj(la, lo));
+    state.lat = g[0]; state.lon = g[1];
+    pins.push({ lat: g[0], lon: g[1] });
+    if (pins.length > 8) pins.shift();
+    base.invalidate(); render();
+    toast('已定位到 ' + f.toUpperCase() + '(' + la + ', ' + lo + ') · 已放定位针');
+  }
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove('show'); }, 1800);
+  }
+
+  /**
+   * 生成跑道：以「最后一根定位针」为圆心（没有就用当前视野中心），
+   * 按 长轴×短轴 画 N 个同心椭圆，每个椭圆是一条闭合 way。
+   * 用法：先「经纬度定位」把针插到操场中心 → 填长轴/短轴/圈数/间距 → 生成跑道。
+   */
+  function makeTrack() {
+    var a = parseFloat(document.getElementById('ax').value);
+    var b = parseFloat(document.getElementById('by').value);
+    var n = parseInt(document.getElementById('lanes').value, 10);
+    var gap = parseFloat(document.getElementById('gap').value);
+    if (!(a > 5) || !(b > 5) || !(n >= 1) || !(gap > 0)) { toast('请填写合法参数'); return; }
+    var c = pins.length ? pins[pins.length - 1] : [state.lat, state.lon];
+    var kLon = 111320 * Math.cos(c[0] * Math.PI / 180);
+    var steps = 72, made = 0;
+    pushUndo();
+    for (var i = 0; i < n; i++) {
+      var ra = a / 2 - i * gap, rb = b / 2 - i * gap;   // 由外向内
+      if (ra <= 2 || rb <= 2) break;
+      var ids = [];
+      for (var k = 0; k < steps; k++) {
+        var t = k / steps * Math.PI * 2;
+        var lat = c[0] + (rb * Math.sin(t)) / 111132;
+        var lon = c[1] + (ra * Math.cos(t)) / kLon;
+        ids.push(addNode(lat, lon));
+      }
+      net.ways.push({
+        id: String(nextWayId++), refs: ids.concat([ids[0]]),
+        raw: null, support: 9, deleted: false, isNew: true,
+      });
+      made++;
+    }
+    dirty = true; render();
+    toast('已生成 ' + made + ' 圈跑道（圆心 ' + c[0].toFixed(6) + ', ' + c[1].toFixed(6) + '）');
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 十一、控件绑定
+  // ═══════════════════════════════════════════════════════════════════════
+  var btns = document.querySelectorAll('#bar1 .btn[data-mode]');
+  for (var bi = 0; bi < btns.length; bi++) {
+    btns[bi].addEventListener('click', function () { setMode(this.dataset.mode); });
+  }
+  document.getElementById('btnOpen').addEventListener('click', function () { document.getElementById('file').click(); });
+  document.getElementById('file').addEventListener('change', function (e) {
+    var f = e.target.files && e.target.files[0]; if (!f) return;
+    var fr = new FileReader();
+    fr.onload = function () { loadOsmText(fr.result, f.name); };
+    fr.readAsText(f, 'utf-8');
+  });
+  document.getElementById('btnSave').addEventListener('click', function () {
+    saveAs();
+  });
+  document.getElementById('btnSaveAs').addEventListener('click', saveAs);
+  document.getElementById('btnUndo').addEventListener('click', doUndo);
+  document.getElementById('btnRedo').addEventListener('click', doRedo);
+  document.getElementById('btnFit').addEventListener('click', fitToNet);
+  document.getElementById('btnClear').addEventListener('click', function () {
+    // 不用 confirm（嵌入式浏览器会屏蔽）：改成「再点一次」
+    if (!this._armed) {
+      this._armed = true;
+      this.textContent = '再点一次清空';
+      var btn = this;
+      setTimeout(function () { btn._armed = false; btn.textContent = '清空改动'; }, 3000);
+      return;
+    }
+    location.reload();
+  });
+  document.getElementById('btnGo').addEventListener('click', gotoLatLon);
+  document.getElementById('btnPinClear').addEventListener('click', function () { pins = []; render(); });
+  document.getElementById('btnTrack').addEventListener('click', makeTrack);
+
+  // ── 防丢：自动保存到 localStorage + 恢复 + 导出文本 ──────────────────
+  var LS_KEY = 'neko_osm_autosave_v1';
+  function autosave() {
+    try {
+      if (!net.nodes.size) return;
+      localStorage.setItem(LS_KEY, JSON.stringify({
+        t: Date.now(), name: net.path || '', data: buildOsm(),
+      }));
+    } catch (e) { /* 隐私模式等忽略 */ }
+  }
+  setInterval(autosave, 4000);
+  document.addEventListener('visibilitychange', autosave);
+  window.addEventListener('beforeunload', autosave);
+
+  function restoreAutosave() {
+    var raw = null;
+    try { raw = localStorage.getItem(LS_KEY); } catch (e) {}
+    if (!raw) { toast('没有找到自动保存的编辑'); return; }
+    var o = JSON.parse(raw);
+    loadOsmText(o.data, o.name || 'autosave.osm');
+    toast('已恢复 ' + new Date(o.t).toLocaleString() + ' 的自动保存');
+  }
+  document.getElementById('btnRestore').addEventListener('click', restoreAutosave);
+  document.getElementById('btnText').addEventListener('click', function () {
+    var text = buildOsm();
+    document.getElementById('textArea').value = text;
+    document.getElementById('textPanel').style.display = 'flex';
+    if (copyToClipboard(text)) toast('已复制 ' + text.length + ' 字符，直接粘贴给 Codex 即可');
+  });
+  document.getElementById('btnTextClose').addEventListener('click', function () {
+    document.getElementById('textPanel').style.display = 'none';
+  });
+  document.getElementById('btnTextCopy').addEventListener('click', function () {
+    var ta = document.getElementById('textArea');
+    ta.focus(); ta.select(); ta.setSelectionRange(0, ta.value.length);
+    try { document.execCommand('copy'); toast('已复制 ' + ta.value.length + ' 字符，粘贴给 Codex 即可'); }
+    catch (e) { toast('请手动 Ctrl+A / Ctrl+C'); }
+  });
+
+  // 预设路网：从同目录读取（file:// 下 fetch 会被 CORS 拦，所以走 <script> 注入）
+  document.getElementById('preset').addEventListener('change', function (e) {
+    var name = e.target.value;
+    e.target.value = '';
+    if (!name) return;
+    loadPreset(name);
+  });
+
+  function loadPreset(name) {
+    toast('正在读取 ' + name + ' …');
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', name, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) return;
+      if (xhr.status === 200 || (xhr.status === 0 && xhr.responseText)) {
+        loadOsmText(xhr.responseText, name);
+        toast('已打开 ' + name);
+      } else {
+        toast('读取失败（status ' + xhr.status + '）：' + name);
+      }
+    };
+    xhr.onerror = function () { toast('读取失败（浏览器拦截本地读取）：' + name); };
+    xhr.send();
+  }
+  document.getElementById('cbSat').addEventListener('change', function (e) { base.setEnabled(e.target.checked); render(); });
+  document.getElementById('opacity').addEventListener('input', render);
+  document.getElementById('cbOvl').addEventListener('change', function (e) { base.setOverlay(e.target.checked); render(); });
+  document.getElementById('cbCp').addEventListener('change', render);
+  document.getElementById('cbNode').addEventListener('change', render);
+  document.getElementById('cbLock').addEventListener('change', function (e) {
+    canvas.classList.toggle('locked', e.target.checked);
+    toast(e.target.checked ? '视图已锁定（只能编辑，不能平移缩放）' : '视图已解锁');
+  });
+  document.getElementById('btnCpLoad').addEventListener('click', function () { document.getElementById('cpFile').click(); });
+  document.getElementById('cpFile').addEventListener('change', function (e) {
+    var f = e.target.files && e.target.files[0]; if (!f) return;
+    var isJson = /\.json$/i.test(f.name);
+    var fr = new FileReader();
+    fr.onload = function () {
+      try { loadCheckpoints(fr.result, isJson); }
+      catch (err) { toast('打卡点解析失败：' + err.message); }
+    };
+    fr.readAsText(f, 'utf-8');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key.toLowerCase() === 'z') { e.preventDefault(); doUndo(); }
+    else if (e.ctrlKey && e.key.toLowerCase() === 'y') { e.preventDefault(); doRedo(); }
+    else if (e.ctrlKey && e.key.toLowerCase() === 's') { e.preventDefault(); saveAs(); }
+    else if (e.key === 'Escape') { sel = null; render(); }
+    else if (sel && e.key.indexOf('Arrow') === 0) {
+      // 选中节点后方向键微调（0.5 m；Shift 加速到 5 m）——比鼠标拖准得多
+      var tag = (document.activeElement && document.activeElement.tagName) || '';
+      if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+      var n = net.nodes.get(sel);
+      if (!n) return;
+      e.preventDefault();
+      var step = e.shiftKey ? 5 : 0.5;
+      var kLon = 111320 * Math.cos(n.lat * Math.PI / 180);
+      if (e.key === 'ArrowUp') n.lat += step / 111132;
+      if (e.key === 'ArrowDown') n.lat -= step / 111132;
+      if (e.key === 'ArrowLeft') n.lon -= step / kLon;
+      if (e.key === 'ArrowRight') n.lon += step / kLon;
+      // 连续按只记一次撤销点，避免撤销栈被灌满
+      var now = Date.now();
+      if (now - lastNudge > 800) pushUndo();
+      lastNudge = now;
+      dirty = true;
+      render();
+    }
+  });
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // 十二、启动
+  // ═══════════════════════════════════════════════════════════════════════
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(canvas.clientWidth * dpr);
+    canvas.height = Math.floor(canvas.clientHeight * dpr);
+    base.invalidate(); render();
+  }
+  window.addEventListener('resize', resize);
+  window.addEventListener('beforeunload', function (e) {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+  resize();
+  setMode('del');
+  var savedRaw = null;
+  try { savedRaw = localStorage.getItem(LS_KEY); } catch (e) {}
+  if (savedRaw) {
+    try {
+      var saved = JSON.parse(savedRaw);
+      toast('检测到 ' + new Date(saved.t).toLocaleString() + ' 的自动保存，点「恢复上次」可载回');
+    } catch (e) { toast('点「恢复上次」可载回上次自动保存的编辑'); }
+  } else {
+    toast('先「打开 .osm」载入路网；「载入打卡点…」选 points_cache.json');
+  }
+})();
+</script>
+</body>
+</html>

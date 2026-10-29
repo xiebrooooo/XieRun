@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="neko-network-build">
+  <bounds minlat="42.8442573" minlon="125.1214629" maxlat="42.8509833" maxlon="125.1279192"/>
+  <node id="1" lat="42.8491840" lon="125.1258776"/>
+  <node id="2" lat="42.8490628" lon="125.1256233"/>
+  <node id="3" lat="42.8490495" lon="125.1253150"/>
+  <node id="4" lat="42.8505117" lon="125.1260306"/>
+  <node id="5" lat="42.8509833" lon="125.1266492"/>
+  <node id="6" lat="42.8505927" lon="125.1260556"/>
+  <node id="7" lat="42.8494806" lon="125.1256023"/>
+  <node id="8" lat="42.8489292" lon="125.1250147"/>
+  <node id="9" lat="42.8487142" lon="125.1249246"/>
+  <node id="10" lat="42.8483343" lon="125.1249057"/>
+  <node id="11" lat="42.8482155" lon="125.1250799"/>
+  <node id="12" lat="42.8477505" lon="125.1249368"/>
+  <node id="13" lat="42.8481346" lon="125.1251189"/>
+  <node id="14" lat="42.8481929" lon="125.1254893"/>
+  <node id="15" lat="42.8480872" lon="125.1257286"/>
+  <node id="16" lat="42.8490102" lon="125.1249937"/>
+  <node id="17" lat="42.8491040" lon="125.1249096"/>
+  <node id="18" lat="42.8494178" lon="125.1237893"/>
+  <node id="19" lat="42.8495087" lon="125.1236972"/>
+  <node id="20" lat="42.8494695" lon="125.1235581"/>
+  <node id="21" lat="42.8493339" lon="125.1238344"/>
+  <node id="22" lat="42.8492726" lon="125.1245441"/>
+  <node id="23" lat="42.8486128" lon="125.1264443"/>
+  <node id="24" lat="42.8480280" lon="125.1264604"/>
+  <node id="25" lat="42.8468650" lon="125.1260592"/>
+  <node id="26" lat="42.8480005" lon="125.1250239"/>
+  <node id="27" lat="42.8480765" lon="125.1250008"/>
+  <node id="28" lat="42.8481451" lon="125.1265625"/>
+  <node id="29" lat="42.8479134" lon="125.1276418"/>
+  <node id="30" lat="42.8479615" lon="125.1277169"/>
+  <node id="31" lat="42.8481823" lon="125.1267477"/>
+  <node id="32" lat="42.8481005" lon="125.1259929"/>
+  <node id="33" lat="42.8485302" lon="125.1248656"/>
+  <node id="34" lat="42.8491442" lon="125.1251238"/>
+  <node id="35" lat="42.8483152" lon="125.1247876"/>
+  <node id="36" lat="42.8478197" lon="125.1278521"/>
+  <node id="37" lat="42.8458194" lon="125.1270505"/>
+  <node id="38" lat="42.8455305" lon="125.1270345"/>
+  <node id="39" lat="42.8480013" lon="125.1275447"/>
+  <node id="40" lat="42.8486908" lon="125.1264623"/>
+  <node id="41" lat="42.8482016" lon="125.1252070"/>
+  <node id="42" lat="42.8476391" lon="125.1264195"/>
+  <node id="43" lat="42.8479850" lon="125.1273335"/>
+  <node id="44" lat="42.8482618" lon="125.1253462"/>
+  <node id="45" lat="42.8482253" lon="125.1239106"/>
+  <node id="46" lat="42.8483096" lon="125.1231939"/>
+  <node id="47" lat="42.8481535" lon="125.1230228"/>
+  <node id="48" lat="42.8476684" lon="125.1228427"/>
+  <node id="49" lat="42.8471298" lon="125.1230069"/>
+  <node id="50" lat="42.8466067" lon="125.1227648"/>
+  <node id="51" lat="42.8472989" lon="125.1231430"/>
+  <node id="52" lat="42.8471094" lon="125.1245965"/>
+  <node id="53" lat="42.8481486" lon="125.1241930"/>
+  <node id="54" lat="42.8464308" lon="125.1227698"/>
+  <node id="55" lat="42.8461798" lon="125.1226437"/>
+  <node id="56" lat="42.8458344" lon="125.1221343"/>
+  <node id="57" lat="42.8442573" lon="125.1214629"/>
+  <node id="58" lat="42.8457184" lon="125.1221033"/>
+  <node id="59" lat="42.8483540" lon="125.1246534"/>
+  <node id="60" lat="42.8489435" lon="125.1252600"/>
+  <node id="61" lat="42.8490410" lon="125.1257685"/>
+  <node id="62" lat="42.8488726" lon="125.1262941"/>
+  <node id="63" lat="42.8454814" lon="125.1269544"/>
+  <node id="64" lat="42.8479127" lon="125.1279192"/>
+  <node id="65" lat="42.8481709" lon="125.1264094"/>
+  <node id="66" lat="42.8488988" lon="125.1264693"/>
+  <node id="67" lat="42.8487596" lon="125.1262701"/>
+  <node id="68" lat="42.8489650" lon="125.1257855"/>
+  <way id="1">
+    <nd ref="1"/>
+    <nd ref="2"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="2">
+    <nd ref="2"/>
+    <nd ref="3"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="3">
+    <nd ref="2"/>
+    <nd ref="60"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="4">
+    <nd ref="2"/>
+    <nd ref="61"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="5">
+    <nd ref="3"/>
+    <nd ref="7"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="6">
+    <nd ref="3"/>
+    <nd ref="34"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="7">
+    <nd ref="4"/>
+    <nd ref="6"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="8">
+    <nd ref="4"/>
+    <nd ref="7"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="9">
+    <nd ref="5"/>
+    <nd ref="6"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="10">
+    <nd ref="7"/>
+    <nd ref="34"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="11">
+    <nd ref="8"/>
+    <nd ref="9"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="12">
+    <nd ref="8"/>
+    <nd ref="16"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="13">
+    <nd ref="8"/>
+    <nd ref="60"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="14">
+    <nd ref="9"/>
+    <nd ref="33"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="15">
+    <nd ref="9"/>
+    <nd ref="60"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="16">
+    <nd ref="10"/>
+    <nd ref="11"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="17">
+    <nd ref="10"/>
+    <nd ref="33"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="18">
+    <nd ref="10"/>
+    <nd ref="35"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="19">
+    <nd ref="10"/>
+    <nd ref="44"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="20">
+    <nd ref="11"/>
+    <nd ref="13"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="21">
+    <nd ref="11"/>
+    <nd ref="41"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="22">
+    <nd ref="11"/>
+    <nd ref="45"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="23">
+    <nd ref="12"/>
+    <nd ref="26"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="24">
+    <nd ref="12"/>
+    <nd ref="52"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="25">
+    <nd ref="13"/>
+    <nd ref="27"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="26">
+    <nd ref="13"/>
+    <nd ref="41"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="27">
+    <nd ref="14"/>
+    <nd ref="15"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="28">
+    <nd ref="14"/>
+    <nd ref="44"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="29">
+    <nd ref="14"/>
+    <nd ref="65"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="30">
+    <nd ref="15"/>
+    <nd ref="32"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="31">
+    <nd ref="16"/>
+    <nd ref="17"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="32">
+    <nd ref="16"/>
+    <nd ref="34"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="33">
+    <nd ref="17"/>
+    <nd ref="22"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="34">
+    <nd ref="18"/>
+    <nd ref="19"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="35">
+    <nd ref="18"/>
+    <nd ref="21"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="36">
+    <nd ref="18"/>
+    <nd ref="22"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="37">
+    <nd ref="19"/>
+    <nd ref="20"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="38">
+    <nd ref="21"/>
+    <nd ref="22"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="39">
+    <nd ref="22"/>
+    <nd ref="34"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="40">
+    <nd ref="23"/>
+    <nd ref="28"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="41">
+    <nd ref="23"/>
+    <nd ref="40"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="42">
+    <nd ref="23"/>
+    <nd ref="60"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="43">
+    <nd ref="23"/>
+    <nd ref="65"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="44">
+    <nd ref="24"/>
+    <nd ref="28"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="45">
+    <nd ref="24"/>
+    <nd ref="32"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="46">
+    <nd ref="24"/>
+    <nd ref="42"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="47">
+    <nd ref="24"/>
+    <nd ref="43"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="48">
+    <nd ref="24"/>
+    <nd ref="65"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="49">
+    <nd ref="25"/>
+    <nd ref="42"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="50">
+    <nd ref="26"/>
+    <nd ref="27"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="51">
+    <nd ref="27"/>
+    <nd ref="35"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="52">
+    <nd ref="28"/>
+    <nd ref="31"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="53">
+    <nd ref="28"/>
+    <nd ref="43"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="54">
+    <nd ref="28"/>
+    <nd ref="65"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="55">
+    <nd ref="29"/>
+    <nd ref="30"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="56">
+    <nd ref="29"/>
+    <nd ref="39"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="57">
+    <nd ref="30"/>
+    <nd ref="36"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="58">
+    <nd ref="30"/>
+    <nd ref="64"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="59">
+    <nd ref="31"/>
+    <nd ref="43"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="60">
+    <nd ref="32"/>
+    <nd ref="65"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="61">
+    <nd ref="33"/>
+    <nd ref="35"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="62">
+    <nd ref="33"/>
+    <nd ref="59"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="63">
+    <nd ref="35"/>
+    <nd ref="59"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="64">
+    <nd ref="36"/>
+    <nd ref="37"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="65">
+    <nd ref="36"/>
+    <nd ref="64"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="66">
+    <nd ref="37"/>
+    <nd ref="38"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="67">
+    <nd ref="38"/>
+    <nd ref="63"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="68">
+    <nd ref="39"/>
+    <nd ref="43"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="69">
+    <nd ref="40"/>
+    <nd ref="66"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="70">
+    <nd ref="41"/>
+    <nd ref="44"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="71">
+    <nd ref="45"/>
+    <nd ref="46"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="72">
+    <nd ref="45"/>
+    <nd ref="53"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="73">
+    <nd ref="46"/>
+    <nd ref="47"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="74">
+    <nd ref="47"/>
+    <nd ref="48"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="75">
+    <nd ref="48"/>
+    <nd ref="49"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="76">
+    <nd ref="49"/>
+    <nd ref="50"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="77">
+    <nd ref="49"/>
+    <nd ref="51"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="78">
+    <nd ref="50"/>
+    <nd ref="54"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="79">
+    <nd ref="51"/>
+    <nd ref="52"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="80">
+    <nd ref="53"/>
+    <nd ref="59"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="81">
+    <nd ref="54"/>
+    <nd ref="55"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="82">
+    <nd ref="55"/>
+    <nd ref="56"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="83">
+    <nd ref="56"/>
+    <nd ref="58"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="84">
+    <nd ref="57"/>
+    <nd ref="58"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="85">
+    <nd ref="61"/>
+    <nd ref="68"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="86">
+    <nd ref="62"/>
+    <nd ref="66"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="87">
+    <nd ref="62"/>
+    <nd ref="67"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="88">
+    <nd ref="62"/>
+    <nd ref="68"/>
+    <tag k="highway" v="footway"/>
+    <tag k="source" v="nekosports_gps_track"/>
+    <tag k="note" v="auto-generated candidate path; verify on site"/>
+    <tag k="oneway" v="no"/>
+  </way>
+</osm>
